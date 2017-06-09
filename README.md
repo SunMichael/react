@@ -21,9 +21,9 @@
 </code></pre>
 
 
-2.拷贝一份node_modules
+2.下载node_modules
 
-可以新建一个项目 然后cd 到目录下执行 react-native init name ，拷贝里面的文件夹到项目下       
+npm install --save react-native 
 
 3.通过pod安装需要的库 
 
