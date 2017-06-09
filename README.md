@@ -49,6 +49,8 @@ pod 'React', :path => './node_modules/react-native', :subspecs => [
   
   Yoga必须在target 8.0以上
   
-4.pod install 安装
+4.pod install 安装     
+
+5.创建js文件，在终端在启动服务，npm start或者npm start --reset-cache
 
 
