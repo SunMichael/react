@@ -4,7 +4,8 @@
 1.创建package.json文件       
 
 在终端中cd到项目目录， 运行npm init生成文件，编辑文件内容如下：   
-<code>{ 
+<code>{
+
   "name": "name",//此处替换你的项目名称
   
   "version": "0.0.1",
@@ -24,17 +25,20 @@
     "react-native": "0.42.0"// 同上，目前最新0.42.0 
     
   } 
-}<code>          
+}<code>
 
-2.拷贝一份node_modules       
+
+
+### 2.拷贝一份node_modules
 
 可以新建一个项目 然后cd 到目录下执行 react-native init name ，拷贝里面的文件夹到项目下       
 
-3.通过pod安装需要的库       
+### 3.通过pod安装需要的库 
 
-pod 里的内容如下： 
+pod 里的内容如下：
 
 pod 'React', :path => './node_modules/react-native', :subspecs => [
+
     'Core',
     'RCTActionSheet',
     'RCTAnimation',
@@ -46,12 +50,13 @@ pod 'React', :path => './node_modules/react-native', :subspecs => [
     'RCTText',
     'RCTVibration',
     'RCTWebSocket'
+    
   ]
  
   pod "Yoga", :path => "./node_modules/react-native/ReactCommon/yoga"
   
   Yoga必须在target 8.0以上
   
-  4.pod install 安装
+  ### 4.pod install 安装
 
 
