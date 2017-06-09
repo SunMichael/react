@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		040B57351EEA516F000E1642 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040B57341EEA516F000E1642 /* libReact.a */; };
+		04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */; };
+		04D3DC5B1EEA821000074C18 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */; };
+		04D3DC5C1EEA821000074C18 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC571EEA821000074C18 /* WebViewJavascriptBridgeBase.m */; };
+		04D3DC5D1EEA821000074C18 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC591EEA821000074C18 /* WKWebViewJavascriptBridge.m */; };
 		04DAB8CE1EE65B13007BE50E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB8BC1EE65B13007BE50E /* AppDelegate.m */; };
 		04DAB8CF1EE65B13007BE50E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB8BD1EE65B13007BE50E /* main.m */; };
 		04DAB8D11EE65B13007BE50E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB8C81EE65B13007BE50E /* Assets.xcassets */; };
@@ -107,6 +111,14 @@
 
 /* Begin PBXFileReference section */
 		040B57341EEA516F000E1642 /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "Pods/../build/Debug-iphoneos/React/libReact.a"; sourceTree = "<group>"; };
+		04D3DC521EEA821000074C18 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		04D3DC541EEA821000074C18 /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
+		04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
+		04D3DC561EEA821000074C18 /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		04D3DC571EEA821000074C18 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		04D3DC581EEA821000074C18 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		04D3DC591EEA821000074C18 /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		04DAB89F1EE65A2B007BE50E /* ZATools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZATools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAB8BB1EE65B13007BE50E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04DAB8BC1EE65B13007BE50E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -318,6 +330,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04D3DC511EEA820F00074C18 /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				04D3DC521EEA821000074C18 /* WebViewJavascriptBridge.h */,
+				04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */,
+				04D3DC541EEA821000074C18 /* WebViewJavascriptBridge_JS.h */,
+				04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */,
+				04D3DC561EEA821000074C18 /* WebViewJavascriptBridgeBase.h */,
+				04D3DC571EEA821000074C18 /* WebViewJavascriptBridgeBase.m */,
+				04D3DC581EEA821000074C18 /* WKWebViewJavascriptBridge.h */,
+				04D3DC591EEA821000074C18 /* WKWebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
 		04DAB8961EE65A2A007BE50E = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +475,7 @@
 		04DAB8C61EE65B13007BE50E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				04D3DC511EEA820F00074C18 /* WebViewJavascriptBridge */,
 				04DAB9FE1EE6885D007BE50E /* OpenSDK1.7.7 */,
 				04DAB9BA1EE660C3007BE50E /* UMessage_Sdk_1.4.0 */,
 				04DAB9BD1EE660C3007BE50E /* UMSocial */,
@@ -1120,6 +1148,7 @@
 				04DAB9201EE65C13007BE50E /* WebViewController.m in Sources */,
 				04DAB9AE1EE65C8D007BE50E /* IvyUserDefaults.m in Sources */,
 				04DAB9251EE65C13007BE50E /* CityModel.m in Sources */,
+				04D3DC5C1EEA821000074C18 /* WebViewJavascriptBridgeBase.m in Sources */,
 				04DAB9AB1EE65C8D007BE50E /* StorageUtils.m in Sources */,
 				04DAB99B1EE65C8D007BE50E /* JYCarouselAnimation.m in Sources */,
 				04DAB9A11EE65C8D007BE50E /* UIImageView+JYImageViewManager.m in Sources */,
@@ -1131,10 +1160,12 @@
 				04DAB9281EE65C13007BE50E /* ProvinceModel.m in Sources */,
 				04DABA201EE938B2007BE50E /* UIViewController+RTRootNavigationController.m in Sources */,
 				04DAB92A1EE65C13007BE50E /* StreetModel.m in Sources */,
+				04D3DC5D1EEA821000074C18 /* WKWebViewJavascriptBridge.m in Sources */,
 				04DAB9321EE65C13007BE50E /* IntroPageView.m in Sources */,
 				04DAB9A01EE65C8D007BE50E /* JYWeakTimer.m in Sources */,
 				04DAB91E1EE65C13007BE50E /* BaseController.m in Sources */,
 				04DAB9291EE65C13007BE50E /* ResultModel.m in Sources */,
+				04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */,
 				04DAB8CF1EE65B13007BE50E /* main.m in Sources */,
 				04DAB9941EE65C8D007BE50E /* UIButton+ClickArea.m in Sources */,
 				04DAB9951EE65C8D007BE50E /* UIColor+BK.m in Sources */,
@@ -1142,6 +1173,7 @@
 				04DAB9B31EE65F40007BE50E /* BannerModel.m in Sources */,
 				04DAB9E31EE677EE007BE50E /* HomeController.m in Sources */,
 				04DAB9AC1EE65C8D007BE50E /* NetworkServiceConfig.m in Sources */,
+				04D3DC5B1EEA821000074C18 /* WebViewJavascriptBridge_JS.m in Sources */,
 				04DAB99A1EE65C8D007BE50E /* JYCarousel.m in Sources */,
 				04DAB9211EE65C13007BE50E /* YzjNavigationController.m in Sources */,
 				04DAB9E81EE677F6007BE50E /* AccountService.m in Sources */,
