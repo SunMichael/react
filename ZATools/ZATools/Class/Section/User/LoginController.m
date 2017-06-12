@@ -44,6 +44,10 @@ static int second=60;
     return @"我的";
 }
 
+- (NSString *)title{
+    return @"登录";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -53,8 +57,7 @@ static int second=60;
     titleLab.font = [UIFont boldSystemFontOfSize:16.0f];
     titleLab.text = @"我的登录";
 
-    self.navigationController.navigationItem.titleView = titleLab;
-    self.navigationController.navigationBar.barTintColor = [UIColor yellowColor];
+    self.navigationItem.titleView = titleLab;
     
     _accountService=[AccountService shareInstance];
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapView)];
@@ -83,7 +86,7 @@ static int second=60;
 -(void)createUI
 {
     
-    _bgView=[[UIView alloc]initWithFrame:CGRectMake(0, 0.0f, kScreenWidth, kScreenHeight*0.65)];
+    _bgView=[[UIView alloc]initWithFrame:CGRectMake(0, kHeaderBarHeight, kScreenWidth, kScreenHeight*0.65)];
     _bgView.backgroundColor=[UIColor whiteColor];
     _bgView.userInteractionEnabled=YES;
     

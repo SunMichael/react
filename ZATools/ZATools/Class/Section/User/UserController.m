@@ -19,7 +19,7 @@
     [super viewDidLoad];
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(100, 180, 60.0f, 40.f);
+    button.frame = CGRectMake(100, 100, 60.0f, 40.f);
     [button setBackgroundColor:[UIColor yellowColor]];
     [button addTarget:self action:@selector(loginAccount) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
@@ -30,7 +30,7 @@
 
     LoginController *loginVc = [LoginController new];
 
-    [self.rt_navigationController pushViewController:loginVc animated:YES];
+    [RootNavController pushViewController:loginVc animated:YES];
 }
 
 

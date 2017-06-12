@@ -28,14 +28,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    self.view.backgroundColor = kBackViewColor;
-    [self customNavigationBarLeftButton];
+
+//    [self customNavigationBarLeftButton];
+    [self customHeaderBar];
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
         [self setViewEdgeInset];
     }
 }
 
+- (void)customHeaderBar{
+    IvyHeaderBar *header = [[IvyHeaderBar alloc] initWithTitle:[self title] leftBtnTitle:[self backTitle] leftBtnImg:([self backTitle] ? GetImage(@"Icon_back") : nil) leftBtnHighlightedImg:nil rightBtnTitle:nil rightBtnImg:nil rightBtnHighlightedImg:nil backgroundColor:kWhiteColor];
+    if ([self backTitle]) {
+        [header.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    }
+    [self.view addSubview:header];
+}
 
 - (void)customNavigationBarLeftButton{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

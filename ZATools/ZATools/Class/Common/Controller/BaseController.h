@@ -10,7 +10,6 @@
 
 @interface BaseController : UIViewController
 
-@property (nonatomic, assign)BOOL showRight;
 @property (nonatomic, copy) NSString *backTitle;
 
 - (void)showIndicatorOnWindow;

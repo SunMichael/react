@@ -22,8 +22,8 @@
 #import "MJRefresh.h"
 #import "WNTools.h"
 #import "NSString+BK.h"
-#import "UIViewController+RTRootNavigationController.h"
-#import "RTRootNavigationController.h"
+//#import "UIViewController+RTRootNavigationController.h"
+//#import "RTRootNavigationController.h"
 
 #import "YZJGifHeader.h"
 #import "YZJBackFooter.h"

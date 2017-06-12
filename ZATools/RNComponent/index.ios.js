@@ -5,14 +5,48 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  NativeModules,
+  TouchableOpacity
 } from 'react-native';
-
+import { NativeAppEventEmitter } from 'react-native';
+var iosMethod = NativeModules.ZAAlertView;
+var subscription;
 class ZATools extends React.Component {
+    /*
+  _alert(){
+    iosMethod.show("hello",(error,events)=>{
+        if(error){
+          console.error(error);
+        }else{
+          this.setState({events:events});
+        }
+  });
+  }
+  componentDidMount(){
+    console.log('开始订阅通知...');
+    subscription = NativeAppEventEmitter.addListener(
+         'sendCallback',
+          (reminder) => {
+            let errorCode=reminder.errorCode;
+            if(errorCode===0){
+               this.setState({msg:reminder.name});
+            }else{
+               this.setState({msg:reminder.msg});
+            }
+
+          }
+         );
+  }
+  componentWillUnmount(){
+     subscription.remove();
+  }
+     */
   render() {
     var contents = this.props["scores"].map(
       score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
     );
+
     return (
       <View style={styles.container}>
         <Text style={styles.highScoresTitle}>
@@ -42,6 +76,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  button: {
+    margin:5,
+    backgroundColor: 'white',
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#facece',
   },
 });
 

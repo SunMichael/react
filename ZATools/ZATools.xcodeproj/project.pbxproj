@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		040B57351EEA516F000E1642 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040B57341EEA516F000E1642 /* libReact.a */; };
+		045238161EEE5E00002D7EB5 /* ZAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238151EEE5E00002D7EB5 /* ZAEvent.m */; };
+		045238181EEE7DC6002D7EB5 /* index.ios.js in Resources */ = {isa = PBXBuildFile; fileRef = 045238171EEE7DC6002D7EB5 /* index.ios.js */; };
+		0492728B1EEE255700BB00C1 /* ZAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492728A1EEE255700BB00C1 /* ZAAlertView.m */; };
 		04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */; };
 		04D3DC5B1EEA821000074C18 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */; };
 		04D3DC5C1EEA821000074C18 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC571EEA821000074C18 /* WebViewJavascriptBridgeBase.m */; };
@@ -103,14 +106,17 @@
 		04DABA041EE6885D007BE50E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAB9FF1EE6885D007BE50E /* libWeChatSDK.a */; };
 		04DABA051EE6885D007BE50E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04DABA001EE6885D007BE50E /* README.txt */; };
 		04DABA091EE68B50007BE50E /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DABA081EE68B50007BE50E /* WXApiManager.m */; };
-		04DABA1F1EE938B2007BE50E /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DABA1B1EE938B1007BE50E /* RTRootNavigationController.m */; };
-		04DABA201EE938B2007BE50E /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DABA1D1EE938B1007BE50E /* UIViewController+RTRootNavigationController.m */; };
 		04DABA621EEA3282007BE50E /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DABA611EEA3282007BE50E /* JavaScriptCore.framework */; };
 		3FDB02211298FCC7CF6376BB /* libPods-ZATools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0803A9085C169800C53BB6F2 /* libPods-ZATools.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		040B57341EEA516F000E1642 /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "Pods/../build/Debug-iphoneos/React/libReact.a"; sourceTree = "<group>"; };
+		045238141EEE5E00002D7EB5 /* ZAEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAEvent.h; sourceTree = "<group>"; };
+		045238151EEE5E00002D7EB5 /* ZAEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAEvent.m; sourceTree = "<group>"; };
+		045238171EEE7DC6002D7EB5 /* index.ios.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = index.ios.js; path = RNComponent/index.ios.js; sourceTree = SOURCE_ROOT; };
+		049272891EEE255700BB00C1 /* ZAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAAlertView.h; sourceTree = "<group>"; };
+		0492728A1EEE255700BB00C1 /* ZAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAAlertView.m; sourceTree = "<group>"; };
 		04D3DC521EEA821000074C18 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		04D3DC541EEA821000074C18 /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
@@ -294,10 +300,6 @@
 		04DABA031EE6885D007BE50E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		04DABA071EE68B50007BE50E /* WXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
 		04DABA081EE68B50007BE50E /* WXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
-		04DABA1A1EE938B1007BE50E /* RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
-		04DABA1B1EE938B1007BE50E /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
-		04DABA1C1EE938B1007BE50E /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
-		04DABA1D1EE938B1007BE50E /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
 		04DABA611EEA3282007BE50E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		0803A9085C169800C53BB6F2 /* libPods-ZATools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZATools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		543DEAC146A776714A6A699F /* Pods-ZATools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZATools.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZATools/Pods-ZATools.release.xcconfig"; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 		04DAB8A11EE65A2B007BE50E /* ZATools */ = {
 			isa = PBXGroup;
 			children = (
+				045238171EEE7DC6002D7EB5 /* index.ios.js */,
 				04DAB8B91EE65B13007BE50E /* Class */,
 				04DAB8C61EE65B13007BE50E /* Extension */,
 				04DAB8C71EE65B13007BE50E /* Resource */,
@@ -411,6 +414,10 @@
 				04DAB8D51EE65C13007BE50E /* Controller */,
 				04DAB8E21EE65C13007BE50E /* Model */,
 				04DAB8F31EE65C13007BE50E /* Views */,
+				049272891EEE255700BB00C1 /* ZAAlertView.h */,
+				0492728A1EEE255700BB00C1 /* ZAAlertView.m */,
+				045238141EEE5E00002D7EB5 /* ZAEvent.h */,
+				045238151EEE5E00002D7EB5 /* ZAEvent.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -498,7 +505,6 @@
 		04DAB8D51EE65C13007BE50E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04DABA181EE938B1007BE50E /* RTRootNavigation */,
 				04DAB8D61EE65C13007BE50E /* BaseController.h */,
 				04DAB8D71EE65C13007BE50E /* BaseController.m */,
 				04DAB8D81EE65C13007BE50E /* LoadingViewController.h */,
@@ -949,17 +955,6 @@
 			path = CustomBackItem;
 			sourceTree = "<group>";
 		};
-		04DABA181EE938B1007BE50E /* RTRootNavigation */ = {
-			isa = PBXGroup;
-			children = (
-				04DABA1A1EE938B1007BE50E /* RTRootNavigationController.h */,
-				04DABA1B1EE938B1007BE50E /* RTRootNavigationController.m */,
-				04DABA1C1EE938B1007BE50E /* UIViewController+RTRootNavigationController.h */,
-				04DABA1D1EE938B1007BE50E /* UIViewController+RTRootNavigationController.m */,
-			);
-			path = RTRootNavigation;
-			sourceTree = "<group>";
-		};
 		174E830944020795FA86A4FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1050,6 +1045,7 @@
 				04DAB8D31EE65B13007BE50E /* Main.storyboard in Resources */,
 				04DAB8D11EE65B13007BE50E /* Assets.xcassets in Resources */,
 				04DAB8D21EE65B13007BE50E /* LaunchScreen.storyboard in Resources */,
+				045238181EEE7DC6002D7EB5 /* index.ios.js in Resources */,
 				04DAB9D21EE660C3007BE50E /* README.txt in Resources */,
 				04DAB9D51EE660C3007BE50E /* UMSocialSDKResources.bundle in Resources */,
 				04DABA051EE6885D007BE50E /* README.txt in Resources */,
@@ -1130,6 +1126,7 @@
 				04DAB9AF1EE65C8D007BE50E /* XWScanImage.m in Sources */,
 				04DAB9A41EE65C8D007BE50E /* Reachability.m in Sources */,
 				04DAB99E1EE65C8D007BE50E /* JYImageDownloader.m in Sources */,
+				0492728B1EEE255700BB00C1 /* ZAAlertView.m in Sources */,
 				04DAB92F1EE65C13007BE50E /* IvyButton.m in Sources */,
 				04DAB9A71EE65C8D007BE50E /* YZJBackFooter.m in Sources */,
 				04DAB9A31EE65C8D007BE50E /* GiFHUD.m in Sources */,
@@ -1158,7 +1155,6 @@
 				04DAB9391EE65C13007BE50E /* SearchBar.m in Sources */,
 				04DAB99C1EE65C8D007BE50E /* JYConfiguration.m in Sources */,
 				04DAB9281EE65C13007BE50E /* ProvinceModel.m in Sources */,
-				04DABA201EE938B2007BE50E /* UIViewController+RTRootNavigationController.m in Sources */,
 				04DAB92A1EE65C13007BE50E /* StreetModel.m in Sources */,
 				04D3DC5D1EEA821000074C18 /* WKWebViewJavascriptBridge.m in Sources */,
 				04DAB9321EE65C13007BE50E /* IntroPageView.m in Sources */,
@@ -1169,7 +1165,6 @@
 				04DAB8CF1EE65B13007BE50E /* main.m in Sources */,
 				04DAB9941EE65C8D007BE50E /* UIButton+ClickArea.m in Sources */,
 				04DAB9951EE65C8D007BE50E /* UIColor+BK.m in Sources */,
-				04DABA1F1EE938B2007BE50E /* RTRootNavigationController.m in Sources */,
 				04DAB9B31EE65F40007BE50E /* BannerModel.m in Sources */,
 				04DAB9E31EE677EE007BE50E /* HomeController.m in Sources */,
 				04DAB9AC1EE65C8D007BE50E /* NetworkServiceConfig.m in Sources */,
@@ -1187,6 +1182,7 @@
 				04DAB9271EE65C13007BE50E /* LoginModel.m in Sources */,
 				04DAB9361EE65C13007BE50E /* TipView.m in Sources */,
 				04DAB9311EE65C13007BE50E /* IntroPage.m in Sources */,
+				045238161EEE5E00002D7EB5 /* ZAEvent.m in Sources */,
 				04DAB9921EE65C8D007BE50E /* SNInfiniteScrollView.m in Sources */,
 				04DAB9A21EE65C8D007BE50E /* NetworkStatus.m in Sources */,
 			);

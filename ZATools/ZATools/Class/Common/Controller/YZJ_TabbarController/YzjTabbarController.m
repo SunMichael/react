@@ -65,12 +65,12 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : kLightGrayColor, NSFontAttributeName : [UIFont systemFontOfSize:13.f]} forState:UIControlStateNormal];
     [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
-    
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
     UINavigationController* storeNC;
     if (homeCtr == nil) {
         homeCtr = [[HomeController alloc] init];
         storeNC = [[UINavigationController alloc] initWithRootViewController:homeCtr];
+//        storeNC.navigationBar.hidden = YES;
         UIImage *nomal = GetImage(@"home_nor");
         nomal = [nomal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         storeNC.tabBarItem.image = nomal;
@@ -88,10 +88,12 @@
     if (userCtr == nil) {
         userCtr = [[UserController alloc] init];
         userNC = [[UINavigationController alloc] initWithRootViewController:userCtr];
+//        userNC.navigationBar.hidden = YES;
         UIImage *nomal = GetImage(@"me_nor");
         nomal = [nomal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         userNC.tabBarItem.image = nomal;
         userNC.tabBarItem.title = @"我的";
+        userNC.tabBarItem.tag = 1;
         userCtr.title = @"我的";
         UIImage *selected = GetImage(@"me_sel");
         selected = [selected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -100,12 +102,15 @@
     else {
         userNC = [self.viewControllers objectAtIndex:1];
     }
-    self.viewControllers = @[storeNC ,userNC];
+    self.viewControllers = @[homeCtr ,userCtr];
     
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     self.navigationItem.title = item.title;
+
+//    self.navigationController.navigationBarHidden = item.tag == 1 ? YES : NO;
+
 }
 
 

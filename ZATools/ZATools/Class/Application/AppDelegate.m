@@ -10,7 +10,7 @@
 #import "YzjTabbarController.h"
 #import "YzjNavigationController.h"
 #import "WXApi.h"
-#import "RTRootNavigationController.h"
+//#import "RTRootNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +23,7 @@
 
     
     YzjTabbarController *tabbar = [[YzjTabbarController alloc] initWithNibName:nil bundle:nil];
-    RTRootNavigationController *navigationVC = [[RTRootNavigationController alloc] initWithRootViewController:tabbar];
+    YzjNavigationController *navigationVC = [[YzjNavigationController alloc] initWithRootViewController:tabbar];
     self.window.rootViewController = navigationVC;
     
     [self registerWeChat];

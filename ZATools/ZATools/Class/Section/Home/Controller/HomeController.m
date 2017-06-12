@@ -17,6 +17,11 @@
 
 @implementation HomeController
 
+
+-(NSString *)title{
+    return @"首页";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -61,8 +66,14 @@
 }
 
 - (void)addReactView{
-    NSURL *jsCodeLocation = [NSURL
+    NSURL *jsCodeLocation;
+#ifdef DEBUG
+    jsCodeLocation = [NSURL
                              URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios"];
+#else
+    jsCodeLocation = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"index.ios" ofType:@"js"]];
+#endif
+    
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
                          moduleName        : @"ZATools"
