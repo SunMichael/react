@@ -9,44 +9,44 @@ import {
   NativeModules,
   TouchableOpacity
 } from 'react-native';
-import { NativeAppEventEmitter } from 'react-native';
+import { NativeEventEmitter } from 'react-native';
 var iosMethod = NativeModules.ZAAlertView;
 var subscription;
 class ZATools extends React.Component {
-    /*
-  _alert(){
+
+  async _alert(){
+    console.log(iosMethod);
     iosMethod.show("hello",(error,events)=>{
         if(error){
           console.error(error);
         }else{
-          this.setState({events:events});
+          console.log(events);
         }
   });
   }
+  ocAlert(){
+    iosMethod.alert()
+  }
+
   componentDidMount(){
     console.log('开始订阅通知...');
-    subscription = NativeAppEventEmitter.addListener(
-         'sendCallback',
-          (reminder) => {
-            let errorCode=reminder.errorCode;
-            if(errorCode===0){
-               this.setState({msg:reminder.name});
-            }else{
-               this.setState({msg:reminder.msg});
-            }
+    this._alert();
 
-          }
-         );
+    var iosExport = NativeModules.ZAAlertView
+    var emitter = new NativeEventEmitter(iosExport)
+    this.subscription = emitter.addListener("sendCallback" , (body) => {
+      console.log("oc 调用 react " + body);
+      alert("oc 调用 react");
+    })
   }
   componentWillUnmount(){
      subscription.remove();
   }
-     */
+
   render() {
     var contents = this.props["scores"].map(
       score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
     );
-
     return (
       <View style={styles.container}>
         <Text style={styles.highScoresTitle}>

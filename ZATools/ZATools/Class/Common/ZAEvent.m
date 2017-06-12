@@ -9,6 +9,8 @@
 #import "ZAEvent.h"
 
 @implementation ZAEvent
+@synthesize bridge = _bridge;
+
 
 RCT_EXPORT_MODULE()
 
@@ -22,13 +24,20 @@ RCT_EXPORT_MODULE()
 }
 
 - (void)receivedCallback:(NSString *)code result:(NSString *)result{
-    [self sendEventWithName:@"sendCallback" body:@{@"code" : code,
-                                                   @"result" : result}];
+//    [self.bridge sendEventWithName:@"sendCallback" body:@{@"code" : code,
+//                                                   @"result" : result}];
 }
 
 - (void)sendMessage:(NSString *)msg{
-    [self sendEventWithName:@"sendMessage" body:@{@"msg" : msg}];
+
+//    [self sendEventWithName:@"sendMessage" body:@{@"msg" : msg}];
+    dispatch_async(dispatch_get_main_queue(), ^{
+       [self sendAppEventWithName:@"sendCallback" body:@{@"msg" : @"hello"}];
+    });
 }
 
+RCT_EXPORT_METHOD(sendMessage){
+//    [self sendEventWithName:@"sendMessage" body:@{@"msg" : @"msg"}];
+}
 
 @end

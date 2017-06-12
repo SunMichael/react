@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "RCTBridgeModule.h"
+#import <React/RCTEventEmitter.h>
 
-@interface ZAAlertView : NSObject <RCTBridgeModule ,UIAlertViewDelegate>
+@interface ZAAlertView : RCTEventEmitter <RCTBridgeModule ,UIAlertViewDelegate>
 
 
 

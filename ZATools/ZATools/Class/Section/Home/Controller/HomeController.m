@@ -22,10 +22,12 @@
     return @"首页";
 }
 
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
 
     [self addReactView];
+    
+    [super viewDidLoad];
     
     
 }
@@ -70,10 +72,12 @@
 #ifdef DEBUG
     jsCodeLocation = [NSURL
                              URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios"];
+//    jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"ios" withExtension:@"jsbundle"];
 #else
-    jsCodeLocation = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"index.ios" ofType:@"js"]];
+    //发布前要对js文件进行打包 更改路径
+    jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"ios" withExtension:@"jsbundle"];
 #endif
-    
+
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
                          moduleName        : @"ZATools"
