@@ -51,9 +51,11 @@ RCT_EXPORT_METHOD(show:(NSString *)msg callback:(RCTResponseSenderBlock)callback
 
 
 /*  常用三种数据互传block
+ 
  RCTResponseSenderBlock     
  RCTPromiseResolveBlock
  RCTPromiseRejectBlock
+ 
  */
 
 

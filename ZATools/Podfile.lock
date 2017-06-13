@@ -17,20 +17,23 @@ PODS:
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
-  - React/Core (0.42.0):
+  - React/Core (0.42.3):
     - React/cxxreact
-    - Yoga (= 0.42.0.React)
-  - React/cxxreact (0.42.0):
+    - Yoga (= 0.42.3.React)
+  - React/cxxreact (0.42.3):
     - React/jschelpers
-  - React/jschelpers (0.42.0)
-  - React/RCTNetwork (0.42.0):
+  - React/jschelpers (0.42.3)
+  - React/RCTImage (0.42.3):
     - React/Core
-  - React/RCTText (0.42.0):
+    - React/RCTNetwork
+  - React/RCTNetwork (0.42.3):
     - React/Core
-  - React/RCTWebSocket (0.42.0):
+  - React/RCTText (0.42.3):
+    - React/Core
+  - React/RCTWebSocket (0.42.3):
     - React/Core
   - UMengAnalytics-NO-IDFA (4.2.5)
-  - Yoga (0.42.0.React)
+  - Yoga (0.42.3.React)
   - YTKNetwork (2.0.3):
     - AFNetworking (~> 3.0)
   - YYModel (1.0.4)
@@ -41,6 +44,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh (~> 3.1.12)
   - React/Core (from `./RNComponent/node_modules/react-native`)
+  - React/RCTImage (from `./RNComponent/node_modules/react-native`)
   - React/RCTNetwork (from `./RNComponent/node_modules/react-native`)
   - React/RCTText (from `./RNComponent/node_modules/react-native`)
   - React/RCTWebSocket (from `./RNComponent/node_modules/react-native`)
@@ -60,12 +64,12 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  React: 8ec97f0d79ba31892c526cf56425937926cc9b48
+  React: 35e039680feacd0563677d49ba410112d2748559
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
-  Yoga: 4183cc70cae189d73f996b1e40c3078aca9f96ef
+  Yoga: 86ce777665c8259b94ef8dbea76b84634237f4ea
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: dc4efb6af3099c714fc1dd4411e0252720ee4219
+PODFILE CHECKSUM: 3e9d389244e3d12d13ab56f06f478be4f3ec2e39
 
 COCOAPODS: 1.2.0

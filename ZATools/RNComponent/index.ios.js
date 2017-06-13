@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   NativeModules,
   TouchableOpacity
 } from 'react-native';
@@ -36,7 +37,6 @@ class ZATools extends React.Component {
     var emitter = new NativeEventEmitter(iosExport)
     this.subscription = emitter.addListener("sendCallback" , (body) => {
       console.log("oc 调用 react " + body);
-      alert("oc 调用 react");
     })
   }
   componentWillUnmount(){
@@ -55,7 +55,12 @@ class ZATools extends React.Component {
         <Text style={styles.scores}>
           {contents}
         </Text>
+        <Image source = {require ('./images/ice.jpg')}
+                style = {styles.image} />
       </View>
+      // <View style= {styles.container}>
+
+      // </View>
     );
   }
 }
@@ -84,6 +89,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#facece',
   },
+  image: {
+    margin: 10,
+    width: 100,
+    height: 100,
+    borderRadius: 5,
+    borderColor: '#ccc',
+    borderWidth: 1,
+  }
 });
 
 // 整体js模块的名称

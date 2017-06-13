@@ -13,6 +13,7 @@ pod 'React', :path => './RNComponent/node_modules/react-native', :subspecs => [
 'RCTText',
 'RCTNetwork',
 'RCTWebSocket',
+'RCTImage'
 ]
  
 pod "Yoga", :path => "./RNComponent/node_modules/react-native/ReactCommon/yoga"

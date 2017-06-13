@@ -7,6 +7,7 @@
 //
 
 #import "ZAEvent.h"
+#import <AVKit/AVPlayerViewController.h>
 
 @implementation ZAEvent
 @synthesize bridge = _bridge;
@@ -24,20 +25,18 @@ RCT_EXPORT_MODULE()
 }
 
 - (void)receivedCallback:(NSString *)code result:(NSString *)result{
-//    [self.bridge sendEventWithName:@"sendCallback" body:@{@"code" : code,
-//                                                   @"result" : result}];
+    [self sendEventWithName:@"sendCallback" body:@{@"code" : code,
+                                                   @"result" : result}];
 }
 
 - (void)sendMessage:(NSString *)msg{
 
-//    [self sendEventWithName:@"sendMessage" body:@{@"msg" : msg}];
-    dispatch_async(dispatch_get_main_queue(), ^{
-       [self sendAppEventWithName:@"sendCallback" body:@{@"msg" : @"hello"}];
-    });
+    [self sendEventWithName:@"sendMessage" body:@{@"msg" : msg}];
 }
 
-RCT_EXPORT_METHOD(sendMessage){
-//    [self sendEventWithName:@"sendMessage" body:@{@"msg" : @"msg"}];
-}
+/*
+ 这样写直接用的话 会报 bridge = nil 错误，需要react提前调用native建立bridge？？?
+*/
+
 
 @end

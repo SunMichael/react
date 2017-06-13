@@ -6,9 +6,9 @@
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
-#import <React/RCTEventDispatcher.h>
+#import <React/RCTEventEmitter.h>
 #import <React/RCTBridgeModule.h>
-@interface ZAEvent : RCTEventDispatcher <RCTBridgeModule>
+@interface ZAEvent : RCTEventEmitter <RCTBridgeModule>
 
 - (void)receivedCallback:(NSString *)code result:(NSString *)result;
 - (void)sendMessage:(NSString *)msg;
