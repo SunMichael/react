@@ -12,16 +12,82 @@ import {
   TextInput,
   Button,
   Alert,
+  ListView,
+  Animated,
+  Easing,
+  PropTypes,
+  NavigatorIOS
 } from 'react-native';
+
+class NavigatorController extends React.Component{
+  render (){
+    return (
+      <NavigatorIOS
+      initialRoute = {{
+        component: ZALogin,
+        title : 'React navigator',
+      }}
+      style = {{flex: 1}} />
+    )
+  }
+
+  pushComponent(nextRoute){
+    this.props.navigator.push(nextRoute)
+  }
+  const route = {
+    component: 'name',
+    title: 'title',
+    passProps: {'key':'value'}
+  }
+
+}
+
 
 
 class ZALogin extends React.Component {
 
  constructor(props){
    super(props);
+   const ds = new ListView.DataSource({rowHasChanged: (r1 ,r2) => (r1 !== r2)})
    this.state = {text: ' ' ,
-                 psw: ' '};
+                 psw: ' ',
+               dataSource: ds.cloneWithRows(['A','B','C','D','e'])};
  }
+
+ componentDidMount(){
+   this.AjaxRequest();
+ }
+    async requestForApi(){
+      try {
+        console.log('try send request');
+        let response = await fetch('https://www.baidu.com/');
+        let responseJson = await response.json;
+        console.log(' response == ',responseJson);
+        return responseJson
+      } catch (e) {
+        console.log(e);
+      } finally {
+
+      }
+    }
+
+    async AjaxRequest(){
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = (e) => {
+        console.log('ajax == ',e);
+        if (request.readyState !== 4) {
+          return;
+        }
+        if (request.status === 200) {
+          console.log('success', request.responseText);
+        }else {
+          console.log('request error');
+        }
+      }
+      request.open('GET','https://www.baidu.com/');
+      request.send;
+    }
+
     render (){
       var text = this.props["name"]
       return (
@@ -64,6 +130,14 @@ class ZALogin extends React.Component {
       color = '#841584'
       backgroundColor = '#ccc'
       />
+      <ListView
+      style = {{marginTop: 20 ,height: 80}}
+      dataSource = {this.state.dataSource}
+      renderRow = {(rowData) => <Text>{rowData}</Text>} />
+
+      <FadeInView style = {{marginTop: 20 , height: 40 ,backgroundColor:'powderblue' }}>
+      <Text style = {{fontSize: 16 ,alignItems: 'center'}}>{'fadeAnimation'}</Text>
+      </FadeInView>
       </View>
 
 
@@ -92,4 +166,49 @@ class ZALogin extends React.Component {
 //
 // });
 
-AppRegistry.registerComponent('ZATools',() => ZALogin);
+
+export default class FadeInView extends React.Component {
+constructor(props){
+  super(props);
+  this.state = {
+    fadeAnim : new Animated.Value(0),
+  };
+}
+componentDidMount(){
+  var  twirl = new Animated.ValueXY(0)
+  Animated.parallel([
+//     // Animated.timing(twirl,{
+//     //   toValue: 180,
+//     // }),
+  Animated.timing(
+    this.state.fadeAnim,
+    {
+      toValue: 1,
+      duration: 5000,
+      easing: Easing.back,
+    }
+  )
+]).start();
+}
+
+render (){
+  return (
+    <Animated.View
+    style = {{...this.props.style,
+    opacity: this.state.fadeAnim,
+    }}
+    >
+    {this.props.children}
+    </Animated.View>
+  )
+}
+
+}
+
+
+
+
+
+
+
+AppRegistry.registerComponent('ZATools',() => NavigatorController);

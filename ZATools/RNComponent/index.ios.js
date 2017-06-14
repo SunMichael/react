@@ -42,7 +42,9 @@ class ZATools extends React.Component {
   componentWillUnmount(){
      subscription.remove();
   }
-
+// require ('./images/ice.jpg')
+// {uri: 'loading20'}
+// {uri: 'https://facebook.github.io/react/img/logo_og.png', cache: 'force-cache'}  //缓存策略
   render() {
     var contents = this.props["scores"].map(
       score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
@@ -55,8 +57,13 @@ class ZATools extends React.Component {
         <Text style={styles.scores}>
           {contents}
         </Text>
-        <Image source = {require ('./images/ice.jpg')}
+        <TouchableOpacity onPress = { () => {
+          console.log('touch ');
+        }
+        } >
+        <Image source = {{uri: 'loading20'}}
                 style = {styles.image} />
+                </TouchableOpacity>
       </View>
       // <View style= {styles.container}>
 
