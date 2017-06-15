@@ -18,11 +18,11 @@
 
 #import "HomeController.h"
 #import "UserController.h"
+#import "DiscoverController.h"
 
 @interface YzjTabbarController () {
     HomeController* homeCtr; //首页
-    UIViewController* serviceCtr; //服务
-    UIViewController* wikiCtr; //百科
+    DiscoverController* discoverCtr; //发现
 
     UserController* userCtr; //我的
     
@@ -84,6 +84,24 @@
     else {
         homeCtr = [self.viewControllers objectAtIndex:0];
     }
+    
+
+    if (discoverCtr == nil) {
+        discoverCtr = [[DiscoverController alloc] init];
+        UIImage *nomal = GetImage(@"me_nor");
+        nomal = [nomal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        discoverCtr.tabBarItem.image = nomal;
+        discoverCtr.tabBarItem.title = @"发现";
+        discoverCtr.tabBarItem.tag = 1;
+        UIImage *selected = GetImage(@"me_sel");
+        selected = [selected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        discoverCtr.tabBarItem.selectedImage = selected;
+    }
+    else {
+        userCtr = [self.viewControllers objectAtIndex:1];
+    }
+    
+    
     UINavigationController* userNC;
     if (userCtr == nil) {
         userCtr = [[UserController alloc] init];
@@ -93,16 +111,16 @@
         nomal = [nomal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         userCtr.tabBarItem.image = nomal;
         userCtr.tabBarItem.title = @"我的";
-        userCtr.tabBarItem.tag = 1;
+        userCtr.tabBarItem.tag = 2;
         userCtr.title = @"我的";
         UIImage *selected = GetImage(@"me_sel");
         selected = [selected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         userCtr.tabBarItem.selectedImage = selected;
     }
     else {
-        userCtr = [self.viewControllers objectAtIndex:1];
+        userCtr = [self.viewControllers objectAtIndex:2];
     }
-    self.viewControllers = @[homeCtr ,userCtr];
+    self.viewControllers = @[homeCtr ,discoverCtr,userCtr];
     
 }
 

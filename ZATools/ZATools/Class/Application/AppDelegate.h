@@ -13,5 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
+- (void)replaceRootViewController:(UIViewController*)newViewController animationOptions:(UIViewAnimationOptions)options;
+
 @end
 

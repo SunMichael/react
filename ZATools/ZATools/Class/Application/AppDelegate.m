@@ -18,6 +18,27 @@
 
 @implementation AppDelegate
 
+- (void)replaceRootViewController:(UIViewController*)newViewController animationOptions:(UIViewAnimationOptions)options
+{
+    UIViewController* formerViewController = self.window.rootViewController;
+    if (formerViewController == newViewController) {
+        return;
+    }
+    
+    void (^completion)(BOOL) = ^(BOOL finished) {
+        self.window.rootViewController = newViewController;
+    };
+    // options 为 0 表示木有动画
+    if (options == 0) {
+        completion(YES);
+    }
+    else {
+        [UIView transitionFromView:formerViewController.view toView:newViewController.view duration:0.65 options:options completion:completion];
+    }
+    
+}
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 

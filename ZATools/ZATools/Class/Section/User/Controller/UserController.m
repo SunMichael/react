@@ -8,7 +8,7 @@
 
 #import "UserController.h"
 #import "LoginController.h"
-#import "ZAEvent.h"
+#import "UserTableView.h"
 #import <React/RCTRootView.h>
 
 @interface UserController ()
@@ -20,15 +20,12 @@
 
 
 - (void)viewDidLoad {
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.extendedLayoutIncludesOpaqueBars = NO;
     [super viewDidLoad];
-
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(100, 100, 60.0f, 40.f);
-    [button setBackgroundColor:[UIColor yellowColor]];
-    [button addTarget:self action:@selector(loginAccount) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-   
-    [self addReactView];
+    UserTableView * userTable = [[UserTableView alloc] initWithFrame:CGRectMake(0.0f, -20.0f, kScreenWidth, kScreenHeight - kFooterTabbarHeight) style:UITableViewStyleGrouped];
+    [self.view addSubview:userTable];
     
 }
 - (void)addReactView{
@@ -51,24 +48,6 @@
        }
                           launchOptions    : nil];
     self.view = rootView;
-}
-
-
-
-- (void)senderMsgToReact{
-    ZAEvent *event = [[ZAEvent alloc] init];
-    [event sendMessage:@"oc to react"];
-}
-
-- (void)loginAccount{
-
-    LoginController *loginVc = [LoginController new];
-
-    [RootNavController pushViewController:loginVc animated:YES];
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    
 }
 
 - (void)didReceiveMemoryWarning {
