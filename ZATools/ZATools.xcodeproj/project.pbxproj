@@ -24,6 +24,8 @@
 		045238631EF226E1002D7EB5 /* DiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238621EF226E1002D7EB5 /* DiscoverController.m */; };
 		045238661EF23559002D7EB5 /* ChooseStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238651EF23559002D7EB5 /* ChooseStatusController.m */; };
 		045238691EF23576002D7EB5 /* DateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238681EF23576002D7EB5 /* DateController.m */; };
+		047D1FFF1EF3A72D00992EDB /* MinPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D1FFE1EF3A72D00992EDB /* MinPickerView.m */; };
+		047D20021EF3B38000992EDB /* UIScrollView+Touch.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D20011EF3B38000992EDB /* UIScrollView+Touch.m */; };
 		0492728B1EEE255700BB00C1 /* ZAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492728A1EEE255700BB00C1 /* ZAAlertView.m */; };
 		04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */; };
 		04D3DC5B1EEA821000074C18 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */; };
@@ -154,6 +156,10 @@
 		045238651EF23559002D7EB5 /* ChooseStatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStatusController.m; sourceTree = "<group>"; };
 		045238671EF23576002D7EB5 /* DateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateController.h; sourceTree = "<group>"; };
 		045238681EF23576002D7EB5 /* DateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateController.m; sourceTree = "<group>"; };
+		047D1FFD1EF3A72D00992EDB /* MinPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinPickerView.h; sourceTree = "<group>"; };
+		047D1FFE1EF3A72D00992EDB /* MinPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinPickerView.m; sourceTree = "<group>"; };
+		047D20001EF3B38000992EDB /* UIScrollView+Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Touch.h"; sourceTree = "<group>"; };
+		047D20011EF3B38000992EDB /* UIScrollView+Touch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Touch.m"; sourceTree = "<group>"; };
 		049272891EEE255700BB00C1 /* ZAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAAlertView.h; sourceTree = "<group>"; };
 		0492728A1EEE255700BB00C1 /* ZAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAAlertView.m; sourceTree = "<group>"; };
 		04D3DC521EEA821000074C18 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
@@ -406,8 +412,12 @@
 		0452383F1EF21DFE002D7EB5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				047D1FFD1EF3A72D00992EDB /* MinPickerView.h */,
+				047D1FFE1EF3A72D00992EDB /* MinPickerView.m */,
 				0452385B1EF222F4002D7EB5 /* SelectTimeView.h */,
 				0452385C1EF222F4002D7EB5 /* SelectTimeView.m */,
+				047D20001EF3B38000992EDB /* UIScrollView+Touch.h */,
+				047D20011EF3B38000992EDB /* UIScrollView+Touch.m */,
 				045238551EF21F4B002D7EB5 /* LogoutView.h */,
 				045238561EF21F4B002D7EB5 /* LogoutView.m */,
 				045238401EF21DFE002D7EB5 /* UserHeaderView.h */,
@@ -1228,6 +1238,7 @@
 				04DAB9231EE65C13007BE50E /* AdModel.m in Sources */,
 				04DAB9991EE65C8D007BE50E /* WNTools.m in Sources */,
 				04DAB9901EE65C8D007BE50E /* NSString+BK.m in Sources */,
+				047D20021EF3B38000992EDB /* UIScrollView+Touch.m in Sources */,
 				04DAB9331EE65C13007BE50E /* IvyLabel.m in Sources */,
 				04DAB9AA1EE65C8D007BE50E /* SSKeychain.m in Sources */,
 				045238631EF226E1002D7EB5 /* DiscoverController.m in Sources */,
@@ -1274,6 +1285,7 @@
 				04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */,
 				04DAB8CF1EE65B13007BE50E /* main.m in Sources */,
 				04DAB9941EE65C8D007BE50E /* UIButton+ClickArea.m in Sources */,
+				047D1FFF1EF3A72D00992EDB /* MinPickerView.m in Sources */,
 				04DAB9951EE65C8D007BE50E /* UIColor+BK.m in Sources */,
 				04DAB9B31EE65F40007BE50E /* BannerModel.m in Sources */,
 				04DAB9E31EE677EE007BE50E /* HomeController.m in Sources */,

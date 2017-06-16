@@ -8,6 +8,7 @@
 
 #import "UserHeaderView.h"
 #import "UIImage+ColorToImage.h"
+#import "DateController.h"
 
 @implementation UserHeaderView
 {
@@ -78,7 +79,8 @@
 }
 
 - (void)clickedLogin{
-    
+    DateController *date = [[DateController alloc]initWithType:DateSettingTypeCalculation];
+    [RootNavController pushViewController:date animated:YES];
 }
 
 -(void)updateHeaderView:(NSNotification *)notic{
