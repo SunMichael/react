@@ -256,7 +256,7 @@
     UIImageView *rightImageView=[[UIImageView alloc] init];
     rightImageView.image=[UIImage imageNamed:@"ic_arrow"];
     rightImageView.frame = CGRectMake(kScreenWidth -10.0f- rightImageView.image.size.width, UserCellHeight/2 - rightImageView.image.size.height/2, rightImageView.image.size.width, rightImageView.image.size.height);
-    [cell.contentView addSubview:rightImageView];
+
     
     
     NSString *str;
@@ -282,6 +282,7 @@
                 NSString* currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
                 tipLabel.text = [NSString stringWithFormat:@"V%@",currentVersion];
                 [cell.contentView addSubview:tipLabel];
+
             }
                 break;
             case 1:

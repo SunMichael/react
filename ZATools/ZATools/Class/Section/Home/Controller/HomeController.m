@@ -21,7 +21,9 @@
 -(NSString *)title{
     return @"首页";
 }
-
+- (BOOL)needBack{
+    return NO;
+}
 
 - (void)viewDidLoad {
 

@@ -11,7 +11,7 @@
 @interface BaseController : UIViewController
 
 @property (nonatomic, copy) NSString *backTitle;
-
+@property (nonatomic, assign) BOOL needBack;
 - (void)showIndicatorOnWindow;
 
 - (void)showIndicatorOnWindowWithMessage:(NSString *)message;

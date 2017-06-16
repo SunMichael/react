@@ -8,6 +8,16 @@
 
 #import "BaseController.h"
 
+typedef enum : NSUInteger {
+    DateSettingTypeExpect,
+    DateSettingTypeCalculation,
+    DateSettingTypeBaby,
+} DateSettingType;
+
+// 设置 计算预产期
 @interface DateController : BaseController
+
+
+-(instancetype)initWithType:(DateSettingType)type;
 
 @end

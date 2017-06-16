@@ -29,16 +29,19 @@
 {
     [super viewDidLoad];
 
-//    [self customNavigationBarLeftButton];
     [self customHeaderBar];
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
         [self setViewEdgeInset];
     }
 }
 
+- (BOOL)needBack{
+    return YES;
+}
+
 - (void)customHeaderBar{
-    IvyHeaderBar *header = [[IvyHeaderBar alloc] initWithTitle:[self title] leftBtnTitle:[self backTitle] leftBtnImg:([self backTitle] ? GetImage(@"Icon_back") : nil) leftBtnHighlightedImg:nil rightBtnTitle:nil rightBtnImg:nil rightBtnHighlightedImg:nil backgroundColor:kWhiteColor];
-    if ([self backTitle]) {
+    IvyHeaderBar *header = [[IvyHeaderBar alloc] initWithTitle:[self title] leftBtnTitle:nil leftBtnImg:([self needBack] ? GetImage(@"Icon_back") : nil) leftBtnHighlightedImg:nil rightBtnTitle:nil rightBtnImg:nil rightBtnHighlightedImg:nil backgroundColor:kWhiteColor];
+    if ([self needBack]) {
         [header.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     }
     [self.view addSubview:header];

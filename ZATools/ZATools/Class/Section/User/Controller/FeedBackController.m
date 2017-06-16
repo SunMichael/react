@@ -35,9 +35,7 @@
 -(NSString *)title{
     return @"意见反馈";
 }
-- (NSString *)backTitle{
-    return @"返回";
-}
+
 -(void)tapView
 {
     [self.view endEditing:YES];

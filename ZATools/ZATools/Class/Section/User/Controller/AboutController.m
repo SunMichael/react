@@ -23,9 +23,7 @@
 - (NSString *)title{
     return @"关于我们";
 }
-- (NSString *)backTitle{
-    return @"返回";
-}
+
 
 
 -(void)createWebView
