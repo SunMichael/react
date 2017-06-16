@@ -42,8 +42,8 @@
     UIButton *msgIv = [UIButton buttonWithType:UIButtonTypeCustom];
     msgIv.frame = CGRectMake(self.width - message.size.width - 10.0f, 40.0f, 25.0f, 25.0f);
     [msgIv setImage:message forState:UIControlStateNormal];
-    [msgIv addTarget:self action:@selector(jumpToMessageList) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:msgIv];
+
+//    [self addSubview:msgIv];
     msgIv.hidden = YES;       //V2.0 暂时没有消息
     
     head = GetImage(@"touxiang");
@@ -55,15 +55,19 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, headIv.width, headIv.height);
     button.frame = headIv.frame;
-    [button addTarget:self action:@selector(editUserInfor) forControlEvents:UIControlEventTouchUpInside];
+//    [button addTarget:self action:@selector(editUserInfor) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:headIv];
-    [self addSubview:button];
+//    [self addSubview:button];
     
     
     if ([[[IvyUserDefaults shareUserDefaults] getUserId] isEqualToString:kYOUKEID]) {
         float w =  100.f;
-        IvyButton *loginBtn = [[IvyButton alloc] initWithFrame:CGRectMake(self.width/2 -w/2, headIv.y + headIv.height , w, 35.0f) titleStr:@"点击登录" titleColor:kRedColor font:GetFont(15.0f) logoImg:nil backgroundImg:nil];
+        IvyButton *loginBtn = [[IvyButton alloc] initWithFrame:CGRectMake(self.width/2 -w/2, headIv.y + headIv.height + 10.f, w, 35.0f) titleStr:@"点击登录" titleColor:kWhiteColor font:GetFont(15.0f) logoImg:nil backgroundImg:[UIImage createImageWithColor:kPinkColor]];
         [loginBtn addTarget:self action:@selector(clickedLogin) forControlEvents:UIControlEventTouchUpInside];
+        loginBtn.layer.cornerRadius = loginBtn.height/2;
+        loginBtn.layer.borderColor = kWhiteColor.CGColor;
+        loginBtn.layer.masksToBounds = YES;
+        loginBtn.layer.borderWidth = 1.0f;
         [self addSubview:loginBtn];
         
     }else{

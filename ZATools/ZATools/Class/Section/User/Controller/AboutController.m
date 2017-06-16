@@ -15,23 +15,18 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:0.94f green:0.94f blue:0.95f alpha:1.00f];
-    [self loadBaseViewContent];
+
     [self createWebView];
     
     
 }
--(void)loadBaseViewContent{
-    
-    IvyHeaderBar *header = [[IvyHeaderBar alloc] initWithTitle:@"关于我们" leftBtnTitle:nil leftBtnImg:[UIImage imageNamed:@"Icon_back"] leftBtnHighlightedImg:nil rightBtnTitle:nil rightBtnImg:nil rightBtnHighlightedImg:nil backgroundColor:[UIColor whiteColor]];
-    [header.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:header];
-    
+- (NSString *)title{
+    return @"关于我们";
 }
--(void)back{
-    
-    [RootNavController popViewControllerAnimated:YES];
-    
+- (NSString *)backTitle{
+    return @"返回";
 }
+
 
 -(void)createWebView
 {

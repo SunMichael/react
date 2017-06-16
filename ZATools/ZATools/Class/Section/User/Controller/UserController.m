@@ -20,11 +20,9 @@
 
 
 - (void)viewDidLoad {
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.extendedLayoutIncludesOpaqueBars = NO;
+  
     [super viewDidLoad];
-    UserTableView * userTable = [[UserTableView alloc] initWithFrame:CGRectMake(0.0f, -20.0f, kScreenWidth, kScreenHeight - kFooterTabbarHeight) style:UITableViewStyleGrouped];
+    UserTableView * userTable = [[UserTableView alloc] initWithFrame:CGRectMake(0.0f, -20.0f, kScreenWidth, kScreenHeight - kFooterTabbarHeight + 20.f) style:UITableViewStylePlain];
     [self.view addSubview:userTable];
     
 }

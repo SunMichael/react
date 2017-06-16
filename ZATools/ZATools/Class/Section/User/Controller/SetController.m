@@ -31,24 +31,17 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:0.94f green:0.94f blue:0.95f alpha:1.00f];
-    [self loadBaseViewContent];
+ 
     [self createTableView];
-    
-    
-    
+
 }
--(void)loadBaseViewContent{
-    
-    IvyHeaderBar *header = [[IvyHeaderBar alloc] initWithTitle:@"设置" leftBtnTitle:nil leftBtnImg:[UIImage imageNamed:@"Icon_back"] leftBtnHighlightedImg:nil rightBtnTitle:nil rightBtnImg:nil rightBtnHighlightedImg:nil backgroundColor:[UIColor whiteColor]];
-    [header.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:header];
-    
+- (NSString *)title{
+    return @"设置";
 }
--(void)back{
-    
-    [RootNavController popViewControllerAnimated:YES];
-    
+- (NSString *)backTitle{
+    return @"返回";
 }
+
 -(void)createTableView
 {
     
@@ -125,12 +118,7 @@
     }else if (indexPath.section==1)
     {
         switch (indexPath.row) {
-            case 0:
-            {
-                FeedBackController *vc=[[FeedBackController alloc]init];
-                [RootNavController pushViewController:vc animated:YES];
-            }
-                break;
+
             case 1:
             {
                 AboutController *vc=[[AboutController alloc]init];
@@ -256,6 +244,12 @@
     label.textColor = kBlackColor;
     label.font=[UIFont systemFontOfSize:15];
     
+    UILabel *tipLabel = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth - 110.f, 0, 100, UserCellHeight)];
+    tipLabel.textAlignment = NSTextAlignmentRight;
+    tipLabel.font = label.font;
+    tipLabel.textColor = kBlackColor;
+    
+    
     UIImageView *lineImageView=[[UIImageView alloc]initWithFrame:CGRectMake(20, UserCellHeight-0.5, kScreenWidth-20, 0.5)];
     lineImageView.backgroundColor=[UIColor colorWithRed:0.93f green:0.93f blue:0.94f alpha:1.00f];
     
@@ -274,9 +268,7 @@
                 [cell.contentView addSubview:lineImageView];
             }
                 break;
-                
             default:
-                str=@"推荐给朋友";
                 break;
         }
         
@@ -287,13 +279,16 @@
             {
                 str=@"当前版本";
                 [cell.contentView addSubview:lineImageView];
+                NSString* currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+                tipLabel.text = [NSString stringWithFormat:@"V%@",currentVersion];
+                [cell.contentView addSubview:tipLabel];
             }
                 break;
             case 1:
             {
-                
                 str=@"关于我们";
                 [cell.contentView addSubview:lineImageView];
+                [cell.contentView addSubview:rightImageView];
             }
                 break;
             default:

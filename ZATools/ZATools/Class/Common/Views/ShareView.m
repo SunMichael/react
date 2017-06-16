@@ -33,16 +33,21 @@
     
     _subShareView=[[UIView alloc]initWithFrame:CGRectMake(0, self.bounds.size.height, kScreenWidth, 200)];
     _subShareView.backgroundColor= kWhiteColor;
+    
+    IvyLabel *tipLab = [[IvyLabel alloc] initWithFrame:CGRectMake(0, 20.f, self.width, 16) text:@"分享到" font:GetFont(16.f) textColor:kBlackColor textAlignment:NSTextAlignmentCenter numberLines:1];
+    [_subShareView addSubview:tipLab];
+    
     NSArray *imageArray=@[@"wechat",@"friend"];
     NSArray *titleArray=@[@"微信好友",@"微信朋友圈"];
     for (int i=0; i<2; ++i) {
         
-        UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake((kScreenWidth-120)/3+((kScreenWidth-120)/3+60)*i, 30, 60, 60)];
+        UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake((kScreenWidth-120)/3+((kScreenWidth-120)/3+60)*i, 55, 60, 60)];
         button.tag=1013+i;
         [button addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
         [_subShareView addSubview:button];
+        
         [button setImage:[UIImage imageNamed:[imageArray objectAtIndex:i]] forState:UIControlStateNormal];
-        UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake((kScreenWidth-120)/3+((kScreenWidth-120)/3+60)*i-20, 100, 100, 15)];
+        UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake((kScreenWidth-120)/3+((kScreenWidth-120)/3+60)*i-20, CGRectGetMaxY(button.frame) + 10.f, 100, 15)];
         label.font=[UIFont systemFontOfSize:13];
         label.textColor=UIColorFromRGB(0x999999);
         label.textAlignment=NSTextAlignmentCenter;
@@ -52,15 +57,13 @@
     }
     CALayer *line = [CALayer layer];
     line.backgroundColor = kBackViewColor.CGColor;
-    line.frame = CGRectMake(0.0f, 135.0f, kScreenWidth, 0.5f);
+    line.frame = CGRectMake(0.0f, 155.f, kScreenWidth, 0.5f);
     [_subShareView.layer addSublayer:line];
 
     
-    UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake(10.0f, 145, kScreenWidth -20.0f, 45)];
-    button.backgroundColor=kRedColor;
-    button.layer.masksToBounds = YES;
-    button.layer.cornerRadius = 5.0f;
-    [button setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake(0.0f, 156, kScreenWidth , 45)];
+    button.backgroundColor= kWhiteColor;
+    [button setTitleColor:kBlackColor forState:UIControlStateNormal];
     
     button.titleLabel.font=[UIFont systemFontOfSize:17];
     [button setTitle:@"取消" forState:UIControlStateNormal];
@@ -73,6 +76,7 @@
 
 -(void)showShareView
 {
+    [[UIApplication sharedApplication].keyWindow addSubview:self];
     float h = _subShareView.y == self.bounds.size.height ? kScreenHeight-_subShareView.bounds.size.height : self.bounds.size.height;
     self.hidden = NO;
     [UIView animateWithDuration:0.5 animations:^{

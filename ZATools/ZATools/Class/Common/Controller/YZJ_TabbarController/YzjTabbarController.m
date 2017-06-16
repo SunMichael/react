@@ -61,8 +61,8 @@
 - (void)loadTabbarControllers
 {
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} forState:UIControlStateSelected];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : kLightGrayColor, NSFontAttributeName : [UIFont systemFontOfSize:13.f]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : kPinkColor} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : kBlackColor, NSFontAttributeName : [UIFont systemFontOfSize:13.f]} forState:UIControlStateNormal];
     [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];

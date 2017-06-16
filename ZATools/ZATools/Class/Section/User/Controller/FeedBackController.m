@@ -7,7 +7,13 @@
 //
 
 #import "FeedBackController.h"
+#import "UIImage+ColorToImage.h"
+
 @interface FeedBackController ()<UITextViewDelegate,UITextFieldDelegate>
+{
+    IvyLabel *tipLab;
+    NSString *defaultText;
+}
 @property(nonatomic, strong)UIView *bgView;
 @property(nonatomic, strong)UITextView *textView;
 @property(nonatomic, strong)UITextField*contactField;
@@ -16,62 +22,52 @@
 @implementation FeedBackController
 -(void)viewDidLoad{
     [super viewDidLoad];
+    defaultText = @"把您的宝贵意见告诉我们，我们会很快改进的";
     self.view.backgroundColor=[UIColor colorWithRed:0.94f green:0.94f blue:0.95f alpha:1.00f];
     
     [self createUI];
-    [self loadBaseViewContent];
+    
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapView)];
     [self.view addGestureRecognizer:tap];
 
     
 }
+-(NSString *)title{
+    return @"意见反馈";
+}
+- (NSString *)backTitle{
+    return @"返回";
+}
 -(void)tapView
 {
     [self.view endEditing:YES];
 }
--(void)loadBaseViewContent{
-    
-    IvyHeaderBar *header = [[IvyHeaderBar alloc] initWithTitle:@"吐槽一下" leftBtnTitle:nil leftBtnImg:[UIImage imageNamed:@"Icon_back"] leftBtnHighlightedImg:nil rightBtnTitle:nil rightBtnImg:nil rightBtnHighlightedImg:nil backgroundColor:[UIColor whiteColor]];
-    [header.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:header];
-    
-}
--(void)back{
-    
-    [RootNavController popViewControllerAnimated:YES];
-    
-}
 
 -(void)createUI{
     
-    _bgView=[[UIView alloc]initWithFrame:CGRectMake(0, navigationBarHeight+15, kScreenWidth, 270)];
+    _bgView=[[UIView alloc]initWithFrame:CGRectMake(0, navigationBarHeight+15, kScreenWidth, 200)];
     _bgView.backgroundColor=[UIColor colorWithRed:0.94f green:0.94f blue:0.95f alpha:1.00f];
     [self.view addSubview:_bgView];
     _textView=[[UITextView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
     _textView.backgroundColor=[UIColor whiteColor];
-    _textView.text=@"请描述你的问题和建议";
     _textView.font=[UIFont systemFontOfSize:15];
     _textView.textColor=[UIColor colorWithRed:0.81f green:0.81f blue:0.83f alpha:1.00f];
      _textView.delegate=self;
-    
+    _textView.text = defaultText;
     [_bgView addSubview:_textView];
     
-    _contactField=[[UITextField alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_textView.frame)+15, kScreenWidth, 50)];
-    _contactField.backgroundColor=[UIColor whiteColor];
-    _contactField.leftView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 15, 50)];
-    _contactField.leftViewMode=UITextFieldViewModeAlways;
-    _contactField.font=[UIFont systemFontOfSize:15];
-    _contactField.placeholder=@"请留下您的联系方式（选填）";
-    _contactField.delegate=self;
-    [_bgView addSubview:_contactField];
+//    tipLab = [[IvyLabel alloc] initWithFrame:CGRectMake(5, 5, 200, 14) text:@"把您的宝贵意见告诉我们，我们会很快改进的" font:GetFont(14) textColor:kLightGrayColor textAlignment:NSTextAlignmentLeft numberLines:1];
+//    [_textView addSubview:tipLab];
    
     _submitButton=[[UIButton alloc]initWithFrame:CGRectMake(40, CGRectGetMaxY(_bgView.frame)+20, kScreenWidth-80, 40)];
     _submitButton.layer.cornerRadius=20;
     _submitButton.layer.masksToBounds=YES;
     [self.view addSubview:_submitButton];
-    [_submitButton setTitle:@"提交建议" forState:UIControlStateNormal];
-    _submitButton.backgroundColor=[UIColor colorWithRed:0.87f green:0.87f blue:0.87f alpha:1.00f];
-    _submitButton.enabled=NO;
+    [_submitButton setTitle:@"提交" forState:UIControlStateNormal];
+    
+    [_submitButton setBackgroundImage:[UIImage createImageWithColor:kPinkColor] forState:UIControlStateNormal];
+    [_submitButton setBackgroundImage:[UIImage createImageWithColor:kLightGrayColor] forState:UIControlStateDisabled];
+    _submitButton.enabled = NO;
     [_submitButton addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
     
     
@@ -94,21 +90,9 @@
     
 }
 
--(void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [UIView animateWithDuration:0.5 animations:^{
-        _bgView.frame=CGRectMake(0, -20, kScreenWidth, 270);
-    }];
-}
--(void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [UIView animateWithDuration:0.5 animations:^{
-        _bgView.frame=CGRectMake(0, navigationBarHeight+15, kScreenWidth, 270);
-    }];
-}
 -(void)textViewDidBeginEditing:(UITextView *)textView
 {
-    if ([textView.text isEqualToString:@"请描述你的问题和建议"]) {
+    if ([textView.text isEqualToString:defaultText]) {
         textView.text=@"";
     }
       textView.textColor=UIColorFromRGB(0x666666);
@@ -119,7 +103,7 @@
     NSString *str=[textView.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     if ([str isEqualToString:@""]) {
-        textView.text=@"请描述你的问题和建议";
+        textView.text=defaultText;
         textView.textColor=[UIColor colorWithRed:0.81f green:0.81f blue:0.83f alpha:1.00f];
       
     }

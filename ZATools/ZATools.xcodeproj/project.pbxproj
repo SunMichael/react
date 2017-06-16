@@ -22,6 +22,8 @@
 		045238571EF21F4B002D7EB5 /* LogoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238561EF21F4B002D7EB5 /* LogoutView.m */; };
 		0452385D1EF222F4002D7EB5 /* SelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452385C1EF222F4002D7EB5 /* SelectTimeView.m */; };
 		045238631EF226E1002D7EB5 /* DiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238621EF226E1002D7EB5 /* DiscoverController.m */; };
+		045238661EF23559002D7EB5 /* ChooseStatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238651EF23559002D7EB5 /* ChooseStatusController.m */; };
+		045238691EF23576002D7EB5 /* DateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238681EF23576002D7EB5 /* DateController.m */; };
 		0492728B1EEE255700BB00C1 /* ZAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492728A1EEE255700BB00C1 /* ZAAlertView.m */; };
 		04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */; };
 		04D3DC5B1EEA821000074C18 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */; };
@@ -148,6 +150,10 @@
 		0452385C1EF222F4002D7EB5 /* SelectTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeView.m; sourceTree = "<group>"; };
 		045238611EF226E1002D7EB5 /* DiscoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverController.h; sourceTree = "<group>"; };
 		045238621EF226E1002D7EB5 /* DiscoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverController.m; sourceTree = "<group>"; };
+		045238641EF23559002D7EB5 /* ChooseStatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStatusController.h; sourceTree = "<group>"; };
+		045238651EF23559002D7EB5 /* ChooseStatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStatusController.m; sourceTree = "<group>"; };
+		045238671EF23576002D7EB5 /* DateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateController.h; sourceTree = "<group>"; };
+		045238681EF23576002D7EB5 /* DateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateController.m; sourceTree = "<group>"; };
 		049272891EEE255700BB00C1 /* ZAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAAlertView.h; sourceTree = "<group>"; };
 		0492728A1EEE255700BB00C1 /* ZAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAAlertView.m; sourceTree = "<group>"; };
 		04D3DC521EEA821000074C18 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
@@ -372,6 +378,10 @@
 				045238501EF21F2D002D7EB5 /* AboutController.m */,
 				045238511EF21F2D002D7EB5 /* FeedBackController.h */,
 				045238521EF21F2D002D7EB5 /* FeedBackController.m */,
+				045238641EF23559002D7EB5 /* ChooseStatusController.h */,
+				045238651EF23559002D7EB5 /* ChooseStatusController.m */,
+				045238671EF23576002D7EB5 /* DateController.h */,
+				045238681EF23576002D7EB5 /* DateController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1201,6 +1211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045238661EF23559002D7EB5 /* ChooseStatusController.m in Sources */,
 				0452385D1EF222F4002D7EB5 /* SelectTimeView.m in Sources */,
 				04DAB9351EE65C13007BE50E /* TablePullToLoadingView.m in Sources */,
 				04DAB9381EE65C13007BE50E /* YSTextField.m in Sources */,
@@ -1285,6 +1296,7 @@
 				04DAB9361EE65C13007BE50E /* TipView.m in Sources */,
 				04DAB9311EE65C13007BE50E /* IntroPage.m in Sources */,
 				045238161EEE5E00002D7EB5 /* ZAEvent.m in Sources */,
+				045238691EF23576002D7EB5 /* DateController.m in Sources */,
 				04DAB9921EE65C8D007BE50E /* SNInfiniteScrollView.m in Sources */,
 				04DAB9A21EE65C8D007BE50E /* NetworkStatus.m in Sources */,
 			);

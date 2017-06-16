@@ -43,10 +43,10 @@
 
 #define kBackViewColor   [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.00f]
 //#define kPinkColor       [UIColor colorWithRed:240.0f/255.0f green:172.0f/255.0f blue:172.0f/255.0f alpha:1.00f]
-#define kPinkColor       [UIColor colorWithRed:255.0f/255.0f green:135.0f/255.0f blue:135.0f/255.0f alpha:1.00f]
+#define kPinkColor       [UIColor colorWithRed:1.00f green:0.35f blue:0.59f alpha:1.00f]
 #define kGreenColor      [UIColor colorWithRed:114.0f / 255.0 green:204.0f / 255.0 blue:70.0f / 255.0 alpha:1.0]
 #define kGrayColor       [UIColor colorWithRed:143.0f/255.0f green:143.0f/255.0f blue:143.0f/255.0f alpha:1.00f]
-#define kBlackColor      [UIColor colorWithRed:51.0f/255.0f green:51.0f/255.0f blue:51.0f/255.0f alpha:1.00f]
+#define kBlackColor      [UIColor colorWithRed:0.40f green:0.40f blue:0.40f alpha:1.00f]
 #define kLineColor       [UIColor colorWithRed:222.0f/255.0f green:222.0f/255.0f blue:222.0f/255.0f alpha:1.00f]
 #define kLightGrayColor       [UIColor colorWithRed:222.0f/255.0f green:222.0f/255.0f blue:222.0f/255.0f alpha:1.00f]
 #define KOrangeColor     [UIColor colorWithRed:1.00f green:0.54f blue:0.25f alpha:1.00f]

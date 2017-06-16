@@ -10,8 +10,8 @@
 #import "UserHeaderView.h"
 #import "UserTableViewCell.h"
 #import "SetController.h"
-
-
+#import "ShareView.h"
+#import "FeedBackController.h"
 
 @implementation UserTableView
 {
@@ -55,7 +55,7 @@
         
         headerView = [[UserHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, 220.f)];
         self.tableHeaderView = headerView;
-        
+        tipText = @"未设置";
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestForTipNumber) name:RELOADORDERNUMBER object:nil];
     }
     return self;
@@ -122,8 +122,30 @@
     if (indexPath.section == 2) {
         SetController *setVC = [SetController new];
         [RootNavController pushViewController:setVC animated:YES];
-    }else{
-        
+    }else if(indexPath.section == 1){
+        switch (indexPath.row) {
+            case 0:
+            {
+                ShareView *shareView = [[ShareView alloc] initWithFrame:[UIScreen mainScreen].bounds shareType:shareFound];
+                [shareView showShareView];
+            }
+                break;
+            case 1:
+            {
+                
+            }
+                break;
+            case 2:
+            {
+                FeedBackController *vc=[[FeedBackController alloc]init];
+                [RootNavController pushViewController:vc animated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
+       
     }
 }
 
