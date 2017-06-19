@@ -92,7 +92,7 @@
             __weak ToolView *copyView = view;
             view.editBlock = ^(BOOL add, NSInteger index){
                 __strong ToolView *sView = copyView;
-                [self sortUseingViews:sView index:index off:40.f];
+                [self sortUseingViews:sView index:index ];
             };
             view.tag = 3 * i + j;
             [useingView addSubview:view];
@@ -108,7 +108,7 @@
     useingView.frame = frame;
 }
 
-- (void)sortUseingViews:(ToolView *)copyView index:(NSInteger)index off: (float)offy{
+- (void)sortUseingViews:(ToolView *)copyView index:(NSInteger)index {
     CGPoint p = copyView.center;
     
     for (NSInteger i = index; i < _useingViews.count - 1; i++) {
@@ -139,14 +139,14 @@
     __weak ToolView *weakView = copyView;
     copyView.editBlock = ^(BOOL add, NSInteger index){
         __strong ToolView *sView = weakView;
-        [self sortUnuseingViews:sView index:sView.tag off:60.f];
+        [self sortUnuseingViews:sView index:sView.tag ];
     };
     [_unuseingViews addObject:copyView];
     [unuseingView addSubview:copyView];
     
     CGRect frame2 = useingView.frame;
     NSInteger num = (_useingViews.count % 3 == 0) ? (_useingViews.count/3) : (_useingViews.count/3 + 1);
-    frame2.size.height = num *(w + 10.f) + offy;
+    frame2.size.height = num *(w + 10.f) + 60.0f;
     useingView.frame = frame2;
     
     CGFloat maxyY = [self sortAddArray:_unuseingViews offy:40.f];
@@ -178,7 +178,7 @@
             __weak ToolView *copyView = view;
             view.editBlock = ^(BOOL add , NSInteger index){
                 __strong ToolView *sView = copyView;
-                [self sortUnuseingViews:sView index:index off:60.f];
+                [self sortUnuseingViews:sView index:index ];
             };
             [unuseingView addSubview:view];
             [_unuseingViews addObject:view];
@@ -196,7 +196,7 @@
     }
 }
 
-- (void)sortUnuseingViews:(ToolView *)copyView index:(NSInteger)index off: (float)offy{
+- (void)sortUnuseingViews:(ToolView *)copyView index:(NSInteger)index{
     CGPoint p = copyView.center;
     
     for (NSInteger i = index; i < _unuseingViews.count - 1; i++) {
@@ -219,7 +219,7 @@
     __weak ToolView *weakView = copyView;
     copyView.editBlock = ^(BOOL add, NSInteger index){
         __strong ToolView *sView = weakView;
-        [self sortUseingViews:sView index:sView.tag off:40.f];
+        [self sortUseingViews:sView index:sView.tag ];
     };
     [_useingViews addObject:copyView];
     [useingView addSubview:copyView];
@@ -231,7 +231,7 @@
     
     CGRect frame2 = unuseingView.frame;
     NSInteger num = (_unuseingViews.count % 3 == 0) ? (_unuseingViews.count/3) : (_unuseingViews.count/3 + 1);
-    frame2.size.height = num *(w + 10.f) + offy;
+    frame2.size.height = num *(w + 10.f) + 40.f;
     frame2.origin.y = CGRectGetMaxY(useingView.frame) + 10.;
     unuseingView.frame = frame2;
     
