@@ -7,7 +7,6 @@
 //
 
 #import "UserHeaderView.h"
-#import "UIImage+ColorToImage.h"
 #import "DateController.h"
 
 @implementation UserHeaderView
@@ -34,22 +33,22 @@
 
 
 - (void)initBaseViews{
-    UIImage *icon = GetImage(@"headerbj");
+    UIImage *icon = [UIImage createImageWithColor:kPinkColor];
     UIImageView *bgIv = [[UIImageView alloc] initWithImage:icon];
     bgIv.frame = CGRectMake(0.0f, 0.0f, self.width, 220.0f);
     [self addSubview:bgIv];
     
-    UIImage *message = GetImage(@"xiaoxi");
-    UIButton *msgIv = [UIButton buttonWithType:UIButtonTypeCustom];
-    msgIv.frame = CGRectMake(self.width - message.size.width - 10.0f, 40.0f, 25.0f, 25.0f);
-    [msgIv setImage:message forState:UIControlStateNormal];
+//    UIImage *message = GetImage(@"xiaoxi");
+//    UIButton *msgIv = [UIButton buttonWithType:UIButtonTypeCustom];
+//    msgIv.frame = CGRectMake(self.width - message.size.width - 10.0f, 40.0f, 25.0f, 25.0f);
+//    [msgIv setImage:message forState:UIControlStateNormal];
 
 //    [self addSubview:msgIv];
-    msgIv.hidden = YES;       //V2.0 暂时没有消息
+//    msgIv.hidden = YES;       //V2.0 暂时没有消息
     
-    head = GetImage(@"touxiang");
+    head = GetImage(@"headerdef");
     headIv = [[UIImageView alloc] initWithImage:head];
-    headIv.frame = CGRectMake(self.width/2 - 75.0f/2, 60.0f, 75.0f, 75.0f);
+    headIv.frame = CGRectMake(self.width/2 - head.size.width/2, 60.0f, head.size.width, head.size.height);
     headIv.layer.masksToBounds = YES;
     headIv.layer.cornerRadius = headIv.height/2;
     
@@ -62,7 +61,7 @@
     
     
     if ([[[IvyUserDefaults shareUserDefaults] getUserId] isEqualToString:kYOUKEID]) {
-        float w =  100.f;
+        float w =  160.f;
         IvyButton *loginBtn = [[IvyButton alloc] initWithFrame:CGRectMake(self.width/2 -w/2, headIv.y + headIv.height + 10.f, w, 35.0f) titleStr:@"点击登录" titleColor:kWhiteColor font:GetFont(15.0f) logoImg:nil backgroundImg:[UIImage createImageWithColor:kPinkColor]];
         [loginBtn addTarget:self action:@selector(clickedLogin) forControlEvents:UIControlEventTouchUpInside];
         loginBtn.layer.cornerRadius = loginBtn.height/2;

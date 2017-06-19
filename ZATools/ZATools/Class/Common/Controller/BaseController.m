@@ -28,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     [self customHeaderBar];
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
         [self setViewEdgeInset];
@@ -40,17 +39,17 @@
 }
 
 - (void)customHeaderBar{
-    IvyHeaderBar *header = [[IvyHeaderBar alloc] initWithTitle:[self title] leftBtnTitle:nil leftBtnImg:([self needBack] ? GetImage(@"Icon_back") : nil) leftBtnHighlightedImg:nil rightBtnTitle:nil rightBtnImg:nil rightBtnHighlightedImg:nil backgroundColor:kWhiteColor];
+    IvyHeaderBar *header = [[IvyHeaderBar alloc] initWithTitle:[self title] leftBtnTitle:nil leftBtnImg:([self needBack] ? GetImage(@"back") : nil) leftBtnHighlightedImg:nil rightBtnTitle:nil rightBtnImg:nil rightBtnHighlightedImg:nil backgroundColor:kPinkColor];
     if ([self needBack]) {
         [header.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     }
-    [self.view addSubview:header];
+    [self.view insertSubview:header atIndex:0];
 }
 
 - (void)customNavigationBarLeftButton{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 60.0f, 40.f);
-    [button setImage:[UIImage imageNamed:@"Icon_back"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [button setTitle:self.backTitle forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:17.f];
     button.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);

@@ -51,7 +51,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"首页";
 }
 
 #pragma mark - private method
@@ -70,30 +69,30 @@
     if (homeCtr == nil) {
         homeCtr = [[HomeController alloc] init];
         storeNC = [[UINavigationController alloc] initWithRootViewController:homeCtr];
-//        storeNC.navigationBar.hidden = YES;
-        UIImage *nomal = GetImage(@"home_nor");
+        storeNC.navigationBar.hidden = YES;
+        UIImage *nomal = GetImage(@"homedef");
         nomal = [nomal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         homeCtr.tabBarItem.image = nomal;
         homeCtr.tabBarItem.title = @"首页";
 //        homeCtr.title = @"首页";
-        UIImage *selected = GetImage(@"home_sel");
+        UIImage *selected = GetImage(@"home");
         selected = [selected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         homeCtr.tabBarItem.selectedImage = selected;
         
     }
     else {
-        homeCtr = [self.viewControllers objectAtIndex:0];
+        storeNC = [self.viewControllers objectAtIndex:0];
     }
     
 
     if (discoverCtr == nil) {
         discoverCtr = [[DiscoverController alloc] init];
-        UIImage *nomal = GetImage(@"me_nor");
+        UIImage *nomal = GetImage(@"faxiandef");
         nomal = [nomal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         discoverCtr.tabBarItem.image = nomal;
         discoverCtr.tabBarItem.title = @"发现";
         discoverCtr.tabBarItem.tag = 1;
-        UIImage *selected = GetImage(@"me_sel");
+        UIImage *selected = GetImage(@"faxian");
         selected = [selected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         discoverCtr.tabBarItem.selectedImage = selected;
     }
@@ -107,13 +106,13 @@
         userCtr = [[UserController alloc] init];
         userNC = [[UINavigationController alloc] initWithRootViewController:userCtr];
 //        userNC.navigationBar.hidden = YES;
-        UIImage *nomal = GetImage(@"me_nor");
+        UIImage *nomal = GetImage(@"userdef");
         nomal = [nomal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         userCtr.tabBarItem.image = nomal;
         userCtr.tabBarItem.title = @"我的";
         userCtr.tabBarItem.tag = 2;
         userCtr.title = @"我的";
-        UIImage *selected = GetImage(@"me_sel");
+        UIImage *selected = GetImage(@"user");
         selected = [selected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         userCtr.tabBarItem.selectedImage = selected;
     }

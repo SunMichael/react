@@ -37,7 +37,7 @@
     IvyLabel *tipLab = [[IvyLabel alloc] initWithFrame:CGRectMake(0, 20.f, self.width, 16) text:@"分享到" font:GetFont(16.f) textColor:kBlackColor textAlignment:NSTextAlignmentCenter numberLines:1];
     [_subShareView addSubview:tipLab];
     
-    NSArray *imageArray=@[@"wechat",@"friend"];
+    NSArray *imageArray=@[@"wechat",@"timeline"];
     NSArray *titleArray=@[@"微信好友",@"微信朋友圈"];
     for (int i=0; i<2; ++i) {
         

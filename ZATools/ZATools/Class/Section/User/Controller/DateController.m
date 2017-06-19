@@ -118,15 +118,14 @@
         
             linkLab.attributedText = attStr;
             [linkLab sizeToFit];
-            linkLab.userInteractionEnabled = YES;
+//            linkLab.userInteractionEnabled = YES;
             linkLab.frame = CGRectMake(kScreenWidth - offx - linkLab.width, offy, linkLab.width, linkLab.height);
-//            [scroll addSubview:linkLab];
+            [scroll addSubview:linkLab];
             
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = linkLab.frame;
-            btn.titleLabel.attributedText = attStr;
-            [btn setTitle:linkString forState:UIControlStateNormal];
-            [scroll addSubview:btn];
+            [btn addTarget:self action:@selector(clickLink) forControlEvents:UIControlEventTouchUpInside];
+            [scroll insertSubview:btn belowSubview:linkLab];
             
             offy = CGRectGetMaxY(linkLab.frame) + 50.f;
         }

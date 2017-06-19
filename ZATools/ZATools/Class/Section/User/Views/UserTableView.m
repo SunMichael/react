@@ -34,8 +34,8 @@
         self.dataSource = self;
         self.backgroundColor = kBackViewColor;
 
-        [self setLayoutMargins:UIEdgeInsetsZero];
-        [self setSeparatorInset:UIEdgeInsetsZero];
+//        [self setLayoutMargins:UIEdgeInsetsZero];
+//        [self setSeparatorInset:UIEdgeInsetsZero];
 //        __weak UserTableView *weakSelf = self;
 //        YZJGifHeader *header = [YZJGifHeader headerWithRefreshingBlock:^{
 //           
@@ -43,13 +43,12 @@
 //        self.separatorStyle = UITableViewCellSeparatorStyleNone;
 //        self.mj_header = header;
     
-        
-        allIconAry = @[@[GetImage(@"muyinghulishi"), GetImage(@"muyinghulishi")],
-                       @[GetImage(@"muyinghulishi"),GetImage(@"muyinghulishi"),GetImage(@"muyinghulishi")],
-                       @[GetImage(@"muyinghulishi")]
+        allIconAry = @[[NSMutableArray arrayWithObjects:GetImage(@"heart"),nil],
+                       @[GetImage(@"shareIcon"),GetImage(@"pingfen"),GetImage(@"feedback")],
+                       @[GetImage(@"set")]
                        ];
         
-        allTitleAry = @[@[@"我的状态",@"宝宝成长记录"],
+        allTitleAry = @[[NSMutableArray arrayWithObjects:@"我的状态",nil],
                         @[@"分享给好友",@"给我们评分",@"意见反馈"],
                         @[@"设置"]];
         

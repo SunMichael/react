@@ -20,7 +20,7 @@
         
         [self addSubview:_iconIv];
         
-        UIImage *icon = GetImage(@"more");
+        UIImage *icon = GetImage(@"next");
         _arrowIv = [[UIImageView alloc] initWithImage:icon];
         _arrowIv.frame = CGRectMake(kScreenWidth - icon.size.width - 10.0f, kUserCellH/2 - icon.size.height/2, icon.size.width, icon.size.height);
         [self addSubview:_arrowIv];
@@ -37,19 +37,19 @@
 
 - (void)updateCellWithImage:(UIImage *)image andTitle:(NSString *)title needBottomLine:(BOOL)need{
     _iconIv.image = image;
-    _iconIv.frame = CGRectMake(10.0f, kUserCellH/2 - image.size.height/2, image.size.width, image.size.height);
+    _iconIv.frame = CGRectMake(10.0f, kUserCellH/2 - image.size.height/2, 18, 18);
     
     _titleLab.text = title;
     _titleLab.frame = CGRectMake(_iconIv.x + _iconIv.width + 10.0f, 0.0f, kScreenWidth, kUserCellH);
-    if (need) {
-        line = [CALayer layer];
-        line.backgroundColor = kLineColor.CGColor;
-        line.frame = CGRectMake(0.0f, kUserCellH - 0.5f, kScreenWidth, 0.5f);
+//    if (need) {
+//        line = [CALayer layer];
+//        line.backgroundColor = kLineColor.CGColor;
+//        line.frame = CGRectMake(0.0f, kUserCellH - 0.5f, kScreenWidth, 0.5f);
 //        [self.layer addSublayer:line];
 //        line.hidden = NO;
-    }else{
+//    }else{
 //        line.hidden = YES;
-    }
+//    }
 }
 
 - (void)awakeFromNib {

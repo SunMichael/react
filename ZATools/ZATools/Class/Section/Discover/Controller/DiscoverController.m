@@ -17,7 +17,9 @@
 -(NSString *)title{
     return @"发现";
 }
-
+-(BOOL)needBack{
+    return NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 

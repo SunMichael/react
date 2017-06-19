@@ -22,6 +22,7 @@
 #import "MJRefresh.h"
 #import "WNTools.h"
 #import "NSString+BK.h"
+#import "UIImage+ColorToImage.h"
 //#import "UIViewController+RTRootNavigationController.h"
 //#import "RTRootNavigationController.h"
 
