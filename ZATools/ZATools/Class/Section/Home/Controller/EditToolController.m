@@ -52,6 +52,9 @@
     return scroll;
 }
 
+/**
+ 初始化正在使用的工具内容
+ */
 - (void)initUseingView{
     useingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 0)];
     useingView.backgroundColor = kBackViewColor;
@@ -60,11 +63,13 @@
     IvyLabel *tipLab = [[IvyLabel alloc] initWithFrame:CGRectMake(offx, 20, kScreenWidth, 16) text:@"已启用的工具（拖拽可以排序）" font:GetFont(16) textColor:kGrayColor textAlignment:NSTextAlignmentLeft numberLines:1];
     [useingView addSubview:tipLab];
     
-    IvyButton *button = [[IvyButton alloc] initWithFrame:CGRectMake(kScreenWidth - 70.0f, tipLab.y - ( 30/2 - tipLab.height/2 ), 60.0f, 30.f) titleStr:@"完成" titleColor:kRedColor font:GetFont(14) logoImg:nil backgroundImg:[UIImage createImageWithColor:kBackViewColor]];
+    IvyButton *button = [[IvyButton alloc] initWithFrame:CGRectMake(kScreenWidth - 70.0f, tipLab.y - ( 30/2 - tipLab.height/2 ), 60.0f, 30.f) titleStr:@"" titleColor:kRedColor font:GetFont(14) logoImg:nil backgroundImg:[UIImage createImageWithColor:kBackViewColor]];
+    [button setTitle:@"编辑" forState:UIControlStateNormal];
+    [button setTitle:@"完成" forState:UIControlStateSelected];
     button.layer.cornerRadius = 3.f;
     button.layer.borderColor = kRedColor.CGColor;
     button.layer.borderWidth = 1.f;
-    [button addTarget:self action:@selector(finish) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(finish:) forControlEvents:UIControlEventTouchUpInside];
     [useingView addSubview:button];
     
 
@@ -73,6 +78,13 @@
     [self loadUseingTools:ary titles:titleAry];
 }
 
+
+/**
+ 加载视图
+
+ @param iconAry xxx
+ @param titleAry xxx
+ */
 - (void)loadUseingTools:(NSMutableArray *)iconAry titles:(NSMutableArray *)titleAry{
     float offy = 60.f;
 
@@ -108,6 +120,13 @@
     useingView.frame = frame;
 }
 
+
+/**
+ 点击移除处理
+
+ @param copyView copyView description
+ @param index index description
+ */
 - (void)sortUseingViews:(ToolView *)copyView index:(NSInteger)index {
     CGPoint p = copyView.center;
     
@@ -158,6 +177,13 @@
     [self sortArray:_useingViews];
 }
 
+
+/**
+ 加载视图
+
+ @param iconAry iconAry description
+ @param titleAry titleAry description
+ */
 - (void)loadUnuseingTools:(NSArray *)iconAry titles:(NSArray *)titleAry{
     float offy = 40.f;
     _unuseingViews = [NSMutableArray array];
@@ -196,6 +222,12 @@
     }
 }
 
+/**
+ 点击添加处理
+
+ @param copyView copyView description
+ @param index index description
+ */
 - (void)sortUnuseingViews:(ToolView *)copyView index:(NSInteger)index{
     CGPoint p = copyView.center;
     
@@ -238,6 +270,9 @@
     [self sortArray: _unuseingViews];
 }
 
+/**
+ 初始化未添加的工具视图
+ */
 - (void)initUnuseingView{
     unuseingView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(useingView.frame) + 10.f, kScreenWidth, 0)];
     unuseingView.backgroundColor = kBackViewColor;
@@ -251,10 +286,25 @@
     [self loadUnuseingTools:unuseAry titles:unuserTitleAry];
 }
 
-- (void)finish{
+- (void)finish:(IvyButton *)button{
     
+    for (ToolView *view in _useingViews) {
+        view.editBtn.hidden = button.selected;
+    }
+    for (ToolView *view in _unuseingViews) {
+        view.editBtn.hidden = button.selected;
+    }
+    button.selected = !button.selected;
 }
 
+
+/**
+ 更新被点击的视图坐标
+
+ @param ary ary description
+ @param offy offy description
+ @return return value description
+ */
 - (CGFloat)sortAddArray:(NSMutableArray *)ary offy:(float)offy{
     if (ary.count == 0) {
         return offy;

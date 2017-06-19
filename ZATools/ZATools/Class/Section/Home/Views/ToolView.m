@@ -55,6 +55,7 @@
     [_editBtn setBackgroundImage:GetImage(@"jia") forState:UIControlStateSelected];
     _editBtn.frame = CGRectMake(self.width - 18.f - 3.f, 3.f, 18.f, 18.f);
     [_editBtn addTarget:self action:@selector(edit) forControlEvents:UIControlEventTouchUpInside];
+    _editBtn.hidden = YES;
     [self addSubview:_editBtn];
 }
 

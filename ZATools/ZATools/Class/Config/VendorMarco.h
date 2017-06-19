@@ -12,7 +12,8 @@
 //第三方SDK参数
 
 
-
-
+#define UMeng_AppKey     @"59473837a40fa3026000031e"
+#define WXAppId           @"wx28d2536c33a65893"
+#define WXAppSecret       @"b73f551890a0da4995c72985cd6ab2c1"
 
 #endif

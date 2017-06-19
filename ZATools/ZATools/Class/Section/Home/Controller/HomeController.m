@@ -12,6 +12,7 @@
 #import "WKWebViewJavascriptBridge.h"
 #import "ToolView.h"
 #import "EditToolController.h"
+#import "ToolController.h"
 @interface HomeController () <WKUIDelegate,WKNavigationDelegate>
 {
     UIScrollView *scroll;
@@ -85,42 +86,13 @@
     if(sender.tag == titleAry.count - 1){
         EditToolController *edit = [[EditToolController alloc] init];
         [RootNavController pushViewController:edit animated:YES];
+    }else{
+        ToolController *tool = [[ToolController alloc] init];
+        tool.headerTitle = @"能不能吃";
+        [RootNavController pushViewController:tool animated:YES];
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)loadWebView{
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    NSSet *dataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
-    [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:dataTypes modifiedSince:[NSDate dateWithTimeIntervalSince1970:0] completionHandler:^{
-        
-    }];
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:20.f]];
-    webView.navigationDelegate = self;
-    //    WKWebViewJavascriptBridge *bridge = [WKWebViewJavascriptBridge bridgeForWebView:webView];
-    [self.view addSubview:webView];
-}
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    
-}
-
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
-    
-}
-
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-    decisionHandler(WKNavigationActionPolicyAllow);
-    
-}
-
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-    decisionHandler(WKNavigationResponsePolicyAllow);
-}
 
 - (void)addReactView{
     NSURL *jsCodeLocation;

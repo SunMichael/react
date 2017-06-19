@@ -28,6 +28,7 @@
 		047D20021EF3B38000992EDB /* UIScrollView+Touch.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D20011EF3B38000992EDB /* UIScrollView+Touch.m */; };
 		0482C9401EF76A1F004706FB /* ToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482C93F1EF76A1F004706FB /* ToolView.m */; };
 		0482C9431EF79579004706FB /* EditToolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482C9421EF79579004706FB /* EditToolController.m */; };
+		0482C9461EF7C89B004706FB /* ToolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482C9451EF7C89B004706FB /* ToolController.m */; };
 		0492728B1EEE255700BB00C1 /* ZAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492728A1EEE255700BB00C1 /* ZAAlertView.m */; };
 		04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */; };
 		04D3DC5B1EEA821000074C18 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */; };
@@ -166,6 +167,8 @@
 		0482C93F1EF76A1F004706FB /* ToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolView.m; sourceTree = "<group>"; };
 		0482C9411EF79579004706FB /* EditToolController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditToolController.h; sourceTree = "<group>"; };
 		0482C9421EF79579004706FB /* EditToolController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditToolController.m; sourceTree = "<group>"; };
+		0482C9441EF7C89B004706FB /* ToolController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolController.h; sourceTree = "<group>"; };
+		0482C9451EF7C89B004706FB /* ToolController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolController.m; sourceTree = "<group>"; };
 		049272891EEE255700BB00C1 /* ZAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAAlertView.h; sourceTree = "<group>"; };
 		0492728A1EEE255700BB00C1 /* ZAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAAlertView.m; sourceTree = "<group>"; };
 		04D3DC521EEA821000074C18 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
@@ -1028,6 +1031,8 @@
 				04DAB9DE1EE677EE007BE50E /* HomeController.m */,
 				0482C9411EF79579004706FB /* EditToolController.h */,
 				0482C9421EF79579004706FB /* EditToolController.m */,
+				0482C9441EF7C89B004706FB /* ToolController.h */,
+				0482C9451EF7C89B004706FB /* ToolController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1265,6 +1270,7 @@
 				04DAB9A31EE65C8D007BE50E /* GiFHUD.m in Sources */,
 				04DAB9A51EE65C8D007BE50E /* VideoPlayView.m in Sources */,
 				04DAB8CE1EE65B13007BE50E /* AppDelegate.m in Sources */,
+				0482C9461EF7C89B004706FB /* ToolController.m in Sources */,
 				04DAB9A61EE65C8D007BE50E /* XZMCoreNewFeatureVC.m in Sources */,
 				04DAB9301EE65C13007BE50E /* IvyHeaderBar.m in Sources */,
 				04DAB9341EE65C13007BE50E /* StatusBar.m in Sources */,

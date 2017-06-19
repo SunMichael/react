@@ -10,6 +10,9 @@
 #import "YzjTabbarController.h"
 #import "YzjNavigationController.h"
 #import "WXApi.h"
+#import <UMMobClick/MobClick.h>
+#import <UMSocialCore/UMSocialCore.h>
+
 //#import "RTRootNavigationController.h"
 
 @interface AppDelegate ()
@@ -63,7 +66,12 @@
     [WXApi registerAppSupportContentFlag:typeFlag];
 }
 
-
-
+-(void)registerUMShare
+{
+    [[UMSocialManager defaultManager] setUmSocialAppkey:UMeng_AppKey];
+    
+    //设置微信的appKey和appSecret
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WXAppId appSecret:WXAppSecret redirectURL:@"http://mobile.umeng.com/social"];
+}
 
 @end
