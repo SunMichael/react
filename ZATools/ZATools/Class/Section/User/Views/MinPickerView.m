@@ -50,6 +50,13 @@
 }
 
 //-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+//    for(UIView *singleLine in pickerView.subviews)
+//    {
+//        if (singleLine.frame.size.height < 1)
+//        {
+//            singleLine.backgroundColor = kBlackColor;
+//        }
+//    }
 //    IvyLabel *label = (IvyLabel *)view;
 //    if (!label) {
 //        label = [[IvyLabel alloc] initWithFrame:view.frame text:_minAry[row] font:GetFont(19.f) textColor:kBlackColor textAlignment:NSTextAlignmentCenter numberLines:1];

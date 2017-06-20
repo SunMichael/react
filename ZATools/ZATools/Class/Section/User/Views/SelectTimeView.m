@@ -10,12 +10,16 @@
 #import "WNTools.h"
 
 @interface SelectTimeView()
+{
+    NSString *selectedDayString;
+}
 @property(nonatomic, strong)UIDatePicker *datePicker;
 @property(nonatomic, strong)UIView *bgView;
 @property(nonatomic, assign)DateType  type;
 @property(nonatomic, copy)NSString *timeString;
 @property(nonatomic, copy)NSString *selectDate;
 @property(nonatomic, copy)NSString *title;
+
 @end
 
 @implementation SelectTimeView
@@ -37,6 +41,9 @@
     _bgView=[[UIView alloc]initWithFrame:CGRectMake(0, self.bounds.size.height, kScreenWidth, 244)];
     _bgView.backgroundColor=[UIColor whiteColor];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(miss)];
+    [self addGestureRecognizer:tap];
+    
     IvyLabel *titleLab = [[IvyLabel alloc] initWithFrame:CGRectMake(0, 0, _bgView.width, 40) text:_title font:GetFont(17) textColor:kBlackColor textAlignment:NSTextAlignmentCenter numberLines:1];
     [_bgView addSubview:titleLab];
     
@@ -50,7 +57,18 @@
     [_bgView addSubview:button];
     [self addSubview:_bgView];
     
-    if (_type != DayDate) {
+    UIButton *cancelBtn=[[UIButton alloc]initWithFrame:CGRectMake(5.0f, 0.0f, 60, 40)];
+    cancelBtn.backgroundColor=[UIColor whiteColor];
+    [cancelBtn setTitleColor:kPinkColor forState:UIControlStateNormal];
+    
+    cancelBtn.titleLabel.font=[UIFont systemFontOfSize:17];
+    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelBtn addTarget:self action:@selector(miss) forControlEvents:UIControlEventTouchUpInside];
+    [_bgView addSubview:cancelBtn];
+
+    
+    
+    if (_type == BirthDate || _type == ExpectDate) {
         _datePicker=[[UIDatePicker alloc]initWithFrame:CGRectMake(0, 50, kScreenWidth, 200)];
         _datePicker.datePickerMode=UIDatePickerModeDate;
         
@@ -75,16 +93,27 @@
             _timeString=[formatter stringFromDate:lastDay];
             
         }
-    }else{
+    }else if(_type == DayDate){
         NSMutableArray *allAry = [NSMutableArray array];
         for (NSInteger i = 1; i <= 31; i++) {
             [allAry addObject:[NSString stringWithFormat:@"%ld",i]];
         }
         _minView = [[MinPickerView alloc] initWithFrame:CGRectMake(0, 50, kScreenWidth, 200)];
         _minView.minAry = allAry;
-        __weak SelectTimeView *weakSelf = self;
+        _minView.showsSelectionIndicator = YES;
+//        __weak SelectTimeView *weakSelf = self;
         _minView.block = ^(NSString *string){
-            [weakSelf.delegate getDayResult:string];
+            selectedDayString = string;
+        };
+        [_bgView addSubview:_minView];
+        [self performSelector:@selector(selected:) withObject:_minView afterDelay:0.01f];
+    }else if (_type == SexType){
+        _minView = [[MinPickerView alloc] initWithFrame:CGRectMake(0, 50, kScreenWidth, 200)];
+        _minView.minAry = @[@"男宝宝",@"女宝宝"];
+        _minView.showsSelectionIndicator = YES;
+//        __weak SelectTimeView *weakSelf = self;
+        _minView.block = ^(NSString *string){
+            selectedDayString = string;
         };
         [_bgView addSubview:_minView];
         [self performSelector:@selector(selected:) withObject:_minView afterDelay:0.01f];
@@ -135,30 +164,35 @@
         if (self.delegate) {
             [self.delegate performSelector:@selector(getExpectDateResult:) withObject:_timeString];
         }
+    }else{
+        if ([_delegate respondsToSelector:@selector(getDayResult:)]) {
+            [_delegate getDayResult:selectedDayString];
+        }
     }
-    
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        
-        _bgView.frame=CGRectMake(0, self.bounds.size.height, kScreenWidth, _bgView.height);
-        
-    }completion:^(BOOL finished) {
-        [self removeFromSuperview];
-    }];
-    
+    [self miss];
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+
+- (void)miss{
     [UIView animateWithDuration:0.3 animations:^{
-        
         _bgView.frame=CGRectMake(0, self.bounds.size.height, kScreenWidth, _bgView.height);
-        
     }completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
-    
 }
+
+
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    [UIView animateWithDuration:0.3 animations:^{
+//        
+//        _bgView.frame=CGRectMake(0, self.bounds.size.height, kScreenWidth, _bgView.height);
+//        
+//    }completion:^(BOOL finished) {
+//        [self removeFromSuperview];
+//    }];
+//    
+//}
 
 
 @end

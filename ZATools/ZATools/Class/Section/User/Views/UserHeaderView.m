@@ -78,7 +78,7 @@
 }
 
 - (void)clickedLogin{
-    DateController *date = [[DateController alloc]initWithType:DateSettingTypeCalculation];
+    DateController *date = [[DateController alloc]initWithType:DateSettingTypeBaby];
     [RootNavController pushViewController:date animated:YES];
 }
 

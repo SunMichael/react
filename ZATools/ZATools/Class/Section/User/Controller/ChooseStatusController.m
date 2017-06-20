@@ -25,7 +25,7 @@
 }
 
 - (void)loadStatusChooseViews{
-    NSArray *imgs = @[GetImage(@"") ,GetImage(@"")];
+    NSArray *imgs = @[GetImage(@"huaiyun") ,GetImage(@"ertong")];
     NSArray *titles = @[@"怀孕",@"育儿"];
     float offy = 80.0f;
     for (NSInteger i = 0 ; i < imgs.count; i++) {

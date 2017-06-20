@@ -26,6 +26,7 @@
     NSString *periodDay;
     NSString *babySex;
     IvyLabel *linkLab;
+    DateType _selectType;
 }
 @end
 
@@ -68,6 +69,7 @@
             titlesAry = @[@"宝宝生日", @"宝宝性别"];
             placeAry = @[@"请输入宝宝生日", @"请输入宝宝性别"];
             linkString = @"我知道预产期";
+            imgAry = @[GetImage(@"rili"), GetImage(@"sex")];
             return @"设置宝宝信息";
         }
             break;
@@ -77,6 +79,7 @@
             titlesAry = @[@"末次月经日期",@"月经周期（天数）"];
             placeAry = @[@"请输入月经日期",@"请输入月经天数"];
             linkString = @"我知道预产期";
+            imgAry = @[GetImage(@"rili"),GetImage(@"yuejing")];
             return @"计算预产期";
         }
             break;
@@ -86,6 +89,7 @@
             titlesAry = @[@"输入预产期"];
             placeAry = @[@"请设置预产期"];
             linkString = @"不知道预产期，计算预产期";
+            imgAry = @[GetImage(@"rili")];
             return @"设置预产期";
         }
             break;
@@ -107,7 +111,7 @@
         IvyLabel *titleLab = [[IvyLabel alloc] initWithFrame:CGRectMake(offx, offy, 200, 15.f) text:titlesAry[i] font:GetFont(15) textColor:kBlackColor textAlignment:NSTextAlignmentLeft numberLines:1];
         [scroll addSubview:titleLab];
         
-        UIView *view = [self loadInputViewWithFrame:CGRectMake(offx, CGRectGetMaxY(titleLab.frame) + 10.0f, kScreenWidth - 2*offx, 50.0f) andPlace:placeAry[i] icon:nil tag:i];
+        UIView *view = [self loadInputViewWithFrame:CGRectMake(offx, CGRectGetMaxY(titleLab.frame) + 10.0f, kScreenWidth - 2*offx, 50.0f) andPlace:placeAry[i] icon:imgAry[i] tag:i];
         [scroll addSubview:view];
         offy = CGRectGetMaxY(view.frame) + 25.f;
         
@@ -152,10 +156,10 @@
     view.layer.borderWidth = 1.f;
     
     UIImageView *ivName = [[UIImageView alloc] initWithImage:icon];
-    ivName.frame = CGRectMake(frame.size.height + 5.f, frame.size.height/2 - icon.size.height/2, icon.size.width, icon.size.height);
+    ivName.frame = CGRectMake(frame.size.height/2 + 5.f, frame.size.height/2 - icon.size.height/2, icon.size.width, icon.size.height);
     [view addSubview:ivName];
     
-    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(ivName.frame), 0, frame.size.width - CGRectGetMaxX(ivName.frame) - 5.f - 10.f, frame.size.height)];
+    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(ivName.frame) + 5.f, 0, frame.size.width - CGRectGetMaxX(ivName.frame) - 5.f - 10.f, frame.size.height)];
     tf.placeholder = place;
     tf.textColor = kPinkColor;
     tf.backgroundColor = kWhiteColor;
@@ -192,7 +196,7 @@
         if (textField.tag == 0) {
            [self showDatePicker:BirthDate andTitle:@"宝宝生日"];
         }else{
-            
+            [self showDatePicker:SexType andTitle:@"宝宝性别"];
         }
     }
     else if (_copyType == DateSettingTypeCalculation){
@@ -211,6 +215,7 @@
     timeView.delegate=self;
     UIWindow *window=  [UIApplication sharedApplication].keyWindow ;
     [window addSubview:timeView];
+    _selectType = type;
     [timeView showTimeView];
 }
 
@@ -228,7 +233,11 @@
 
 
 -(void)getDayResult:(NSString *)str{
-    periodDay = str;
+    if (_selectType == SexType) {
+        babySex = str;
+    }else{
+        periodDay = str;
+    }
 }
 
 

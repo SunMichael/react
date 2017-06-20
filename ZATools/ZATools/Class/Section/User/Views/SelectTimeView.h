@@ -14,6 +14,7 @@ typedef enum :NSInteger
     BirthDate,
     ExpectDate,
     DayDate,
+    SexType
     
 }DateType;
 
@@ -22,7 +23,7 @@ typedef enum :NSInteger
 @optional
 -(void)getBirthResult:(NSString *)str;
 -(void)getExpectDateResult:(NSString *)str;
-- (void)getDayResult:(NSString *)str;
+-(void)getDayResult:(NSString *)str;
 
 @end
 @interface SelectTimeView : UIView

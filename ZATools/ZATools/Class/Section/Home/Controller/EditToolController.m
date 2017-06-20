@@ -29,8 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    w = 140 * (kScreenWidth/750.f) ;
-    w = w > 90.f ? w : 90.f;
+    w = (kScreenWidth - 40.f)/3 ;
+//    w = w > 90.f ? w : 90.f;
     offx = 10;
     space = (kScreenWidth - 3*w - offx*2)/2;
     [self.view addSubview:[self backScrollView]];
@@ -264,7 +264,7 @@
     CGRect frame2 = unuseingView.frame;
     NSInteger num = (_unuseingViews.count % 3 == 0) ? (_unuseingViews.count/3) : (_unuseingViews.count/3 + 1);
     frame2.size.height = num *(w + 10.f) + 40.f;
-    frame2.origin.y = CGRectGetMaxY(useingView.frame) + 10.;
+    frame2.origin.y = CGRectGetMaxY(useingView.frame) + 20;
     unuseingView.frame = frame2;
     
     [self sortArray: _unuseingViews];

@@ -31,11 +31,13 @@
 }
 
 - (void)loadContent{
-    _titleLab = [[IvyLabel alloc] initWithFrame:CGRectMake(0, self.height - 20.f, self.width, 16.f) text:nil font:GetFont(16.f) textColor:kBlackColor textAlignment:NSTextAlignmentCenter numberLines:1];
-    [self addSubview:_titleLab];
+    float offy = self.height/2 - (45.0f + 20.0f + 15.f)/2;
     
-    _iconView = [[UIImageView alloc] initWithFrame:CGRectMake(self.width/2 - 45.f/2, self.height - 45.f - 35.f, 45.f, 45.f)];
+    _iconView = [[UIImageView alloc] initWithFrame:CGRectMake(self.width/2 - 45.f/2, offy, 45.f, 45.f)];
     [self addSubview:_iconView];
+    
+    _titleLab = [[IvyLabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_iconView.frame) + 15.f, self.width, 20.f) text:nil font:GetFont(16.f) textColor:kBlackColor textAlignment:NSTextAlignmentCenter numberLines:1];
+    [self addSubview:_titleLab];
     
     _button = [[IvyButton alloc] initWithFrame:_iconView.frame titleStr:nil titleColor:nil font:nil logoImg:nil backgroundImg:[UIImage createImageWithColor:kWhiteColor]];
     _button.showsTouchWhenHighlighted = YES;
