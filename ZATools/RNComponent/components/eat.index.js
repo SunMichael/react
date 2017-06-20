@@ -15,12 +15,25 @@ export class Menus extends Component {
 	constructor(props){
 		super(props);
 	}
+
+   componentDidMount(){
+		 fetch('http://admin.api-test.yizhenjia.com/order/pay?orderNo=DD20161126151316094119793&userId=3&payStrategy=DIVID')
+      .then((response) => response.json())
+      .then((responseJson) => {
+				console.log(" success ");
+        return responseJson.movies;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+	 }
+
 	render(){
 		let items = [];
 		for(let i in this.props.menus){
 			console.log(i);
 			let item = (
-				<View style={styles.menus_item} key={i}> 
+				<View style={styles.menus_item} key={i}>
 					<View style={styles.item_icon_content}>
 						<Image style={this.props.menus[i].imageStyle} source={this.props.menus[i].image_url} />
 					</View>
@@ -28,7 +41,7 @@ export class Menus extends Component {
 						<Text style={styles.item_text}>{this.props.menus[i].title}</Text>
 					</View>
 				</View>
-			); 
+			);
 			items.push(item);
 		}
 		return (

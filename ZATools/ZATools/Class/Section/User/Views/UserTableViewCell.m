@@ -28,7 +28,7 @@
         _titleLab = [[IvyLabel alloc] initWithFrame:CGRectMake(_iconIv.x + _iconIv.width + 10.0f, 0.0f, kScreenWidth, kUserCellH) text:nil font:GetFont(15.0f) textColor:kBlackColor textAlignment:NSTextAlignmentLeft numberLines:1];
         [self addSubview:_titleLab];
         
-        _tipLab = [[IvyLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _arrowIv.x - 5.0f, kUserCellH) text:nil font:GetFont(15.0f) textColor:kGrayColor textAlignment:NSTextAlignmentRight numberLines:1];
+        _tipLab = [[IvyLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _arrowIv.x - 5.0f, kUserCellH) text:nil font:GetFont(15.0f) textColor:kPinkColor textAlignment:NSTextAlignmentRight numberLines:1];
         [self addSubview:_tipLab];
         
     }

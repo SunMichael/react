@@ -27,6 +27,7 @@
     NSString *babySex;
     IvyLabel *linkLab;
     DateType _selectType;
+    NSMutableArray *allTFAry;
 }
 @end
 
@@ -106,6 +107,7 @@
     tipLab.frame = CGRectMake(offx, offx, kScreenWidth - 2*offx, tipLab.height);
     [scroll addSubview:tipLab];
     
+    allTFAry = [NSMutableArray array];
     float offy = CGRectGetMaxY(tipLab.frame) + 20.f;
     for (NSInteger i = 0; i < titlesAry.count; i++) {
         IvyLabel *titleLab = [[IvyLabel alloc] initWithFrame:CGRectMake(offx, offy, 200, 15.f) text:titlesAry[i] font:GetFont(15) textColor:kBlackColor textAlignment:NSTextAlignmentLeft numberLines:1];
@@ -167,6 +169,7 @@
     tf.delegate = self;
     tf.tag = tag;
     [view addSubview:tf];
+    [allTFAry addObject:tf];
 
     return view;
 }
@@ -179,7 +182,7 @@
 }
 
 - (void)clickLink{
-    if (_copyType == DateSettingTypeCalculation) {
+    if (_copyType == DateSettingTypeCalculation || _copyType == DateSettingTypeBaby) {
         DateController *date = [[DateController alloc] initWithType:DateSettingTypeExpect];
         [self.navigationController pushViewController:date animated:YES];
     }else if (_copyType == DateSettingTypeExpect){
@@ -220,6 +223,8 @@
 }
 
 - (void)getBirthResult:(NSString *)str{
+    UITextField *tf = allTFAry[0];
+    tf.text = str;
     if (_copyType == DateSettingTypeCalculation) {
         periodDate = str;
     }else{
@@ -229,10 +234,15 @@
 
 - (void)getExpectDateResult:(NSString *)str{
     expectDate = str;
+    UITextField *tf = allTFAry[0];
+    tf.text = str;
+    
 }
 
 
 -(void)getDayResult:(NSString *)str{
+    UITextField *tf = allTFAry[1];
+    tf.text = str;
     if (_selectType == SexType) {
         babySex = str;
     }else{
@@ -241,31 +251,31 @@
 }
 
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint originalLocation = [touch locationInView:scroll];
-    if (CGRectContainsPoint(linkLab.frame, originalLocation)) {
-        linkLab.backgroundColor = kLightGrayColor;
-        [self clickLink];
-        linkLab.backgroundColor = kWhiteColor;
-    }else{
-        linkLab.backgroundColor = kWhiteColor;
-    }
-
-}
--(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    linkLab.backgroundColor = kWhiteColor;
-}
-
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    linkLab.backgroundColor = kWhiteColor;
-    [self clickLink];
-}
-
--(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    linkLab.backgroundColor = kWhiteColor;
-}
-
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    UITouch *touch = [touches anyObject];
+//    CGPoint originalLocation = [touch locationInView:scroll];
+//    if (CGRectContainsPoint(linkLab.frame, originalLocation)) {
+//        linkLab.backgroundColor = kLightGrayColor;
+//        [self clickLink];
+//        linkLab.backgroundColor = kWhiteColor;
+//    }else{
+//        linkLab.backgroundColor = kWhiteColor;
+//    }
+//
+//}
+//-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    linkLab.backgroundColor = kWhiteColor;
+//}
+//
+//-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    linkLab.backgroundColor = kWhiteColor;
+//    [self clickLink];
+//}
+//
+//-(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    linkLab.backgroundColor = kWhiteColor;
+//}
+//
 
 
 

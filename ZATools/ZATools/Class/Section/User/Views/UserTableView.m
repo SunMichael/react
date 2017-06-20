@@ -12,6 +12,7 @@
 #import "SetController.h"
 #import "ShareView.h"
 #import "FeedBackController.h"
+#import "ChooseStatusController.h"
 
 @implementation UserTableView
 {
@@ -34,6 +35,7 @@
         self.dataSource = self;
         self.backgroundColor = kBackViewColor;
 
+        self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 //        [self setLayoutMargins:UIEdgeInsetsZero];
 //        [self setSeparatorInset:UIEdgeInsetsZero];
 //        __weak UserTableView *weakSelf = self;
@@ -145,6 +147,11 @@
                 break;
         }
        
+    }else if (indexPath.section == 0){
+        if (indexPath.row == 0) {
+            ChooseStatusController *status = [ChooseStatusController new];
+            [RootNavController pushViewController:status animated:YES];
+        }
     }
 }
 
