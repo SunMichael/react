@@ -16,4 +16,7 @@
 #define WXAppId           @"wx28d2536c33a65893"
 #define WXAppSecret       @"b73f551890a0da4995c72985cd6ab2c1"
 
+
+#define ADKEY             @"SDK20170921090637b97ie3oab1gkwqy"
+
 #endif

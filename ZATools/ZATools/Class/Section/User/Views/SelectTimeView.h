@@ -14,8 +14,8 @@ typedef enum :NSInteger
     BirthDate,
     ExpectDate,
     DayDate,
-    SexType
-    
+    SexType,
+    Normal
 }DateType;
 
 

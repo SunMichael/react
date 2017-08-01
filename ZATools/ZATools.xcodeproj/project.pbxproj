@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		040B57351EEA516F000E1642 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040B57341EEA516F000E1642 /* libReact.a */; };
+		041D3D081EFA1CD400A88C18 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041D3D071EFA1CD400A88C18 /* AdSupport.framework */; };
+		041D3D881EFA1E4400A88C18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041D3D871EFA1E4400A88C18 /* Foundation.framework */; };
+		041D3D8A1EFA1ED800A88C18 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041D3D891EFA1ED800A88C18 /* MapKit.framework */; };
+		041D3D8C1EFA1EE300A88C18 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041D3D8B1EFA1EE300A88C18 /* MobileCoreServices.framework */; };
+		041D3D8E1EFA1EF300A88C18 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041D3D8D1EFA1EF300A88C18 /* AudioToolbox.framework */; };
+		041D3D901EFA1F0600A88C18 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041D3D8F1EFA1F0600A88C18 /* CoreVideo.framework */; };
+		041D3D921EFA1F1000A88C18 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041D3D911EFA1F1000A88C18 /* CoreLocation.framework */; };
+		041D3D941EFA1F4500A88C18 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 041D3D931EFA1F4500A88C18 /* libxml2.tbd */; };
 		045238161EEE5E00002D7EB5 /* ZAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238151EEE5E00002D7EB5 /* ZAEvent.m */; };
 		0452381A1EEE84E6002D7EB5 /* ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 045238191EEE84E6002D7EB5 /* ios.jsbundle */; };
 		045238441EF21DFE002D7EB5 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045238381EF21DFE002D7EB5 /* LoginController.m */; };
@@ -29,11 +37,7 @@
 		0482C9401EF76A1F004706FB /* ToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482C93F1EF76A1F004706FB /* ToolView.m */; };
 		0482C9431EF79579004706FB /* EditToolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482C9421EF79579004706FB /* EditToolController.m */; };
 		0482C9461EF7C89B004706FB /* ToolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482C9451EF7C89B004706FB /* ToolController.m */; };
-		0492728B1EEE255700BB00C1 /* ZAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492728A1EEE255700BB00C1 /* ZAAlertView.m */; };
-		04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */; };
-		04D3DC5B1EEA821000074C18 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */; };
-		04D3DC5C1EEA821000074C18 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC571EEA821000074C18 /* WebViewJavascriptBridgeBase.m */; };
-		04D3DC5D1EEA821000074C18 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D3DC591EEA821000074C18 /* WKWebViewJavascriptBridge.m */; };
+		0492728B1EEE255700BB00C1 /* ZAShowPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492728A1EEE255700BB00C1 /* ZAShowPicker.m */; };
 		04DAB8CE1EE65B13007BE50E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB8BC1EE65B13007BE50E /* AppDelegate.m */; };
 		04DAB8CF1EE65B13007BE50E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAB8BD1EE65B13007BE50E /* main.m */; };
 		04DAB8D11EE65B13007BE50E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DAB8C81EE65B13007BE50E /* Assets.xcassets */; };
@@ -128,6 +132,14 @@
 
 /* Begin PBXFileReference section */
 		040B57341EEA516F000E1642 /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "Pods/../build/Debug-iphoneos/React/libReact.a"; sourceTree = "<group>"; };
+		041D3D071EFA1CD400A88C18 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		041D3D871EFA1E4400A88C18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		041D3D891EFA1ED800A88C18 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		041D3D8B1EFA1EE300A88C18 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		041D3D8D1EFA1EF300A88C18 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		041D3D8F1EFA1F0600A88C18 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		041D3D911EFA1F1000A88C18 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		041D3D931EFA1F4500A88C18 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		045238141EEE5E00002D7EB5 /* ZAEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAEvent.h; sourceTree = "<group>"; };
 		045238151EEE5E00002D7EB5 /* ZAEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAEvent.m; sourceTree = "<group>"; };
 		045238191EEE84E6002D7EB5 /* ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ios.jsbundle; path = RNComponent/ios/ios.jsbundle; sourceTree = SOURCE_ROOT; };
@@ -169,16 +181,8 @@
 		0482C9421EF79579004706FB /* EditToolController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditToolController.m; sourceTree = "<group>"; };
 		0482C9441EF7C89B004706FB /* ToolController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolController.h; sourceTree = "<group>"; };
 		0482C9451EF7C89B004706FB /* ToolController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolController.m; sourceTree = "<group>"; };
-		049272891EEE255700BB00C1 /* ZAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAAlertView.h; sourceTree = "<group>"; };
-		0492728A1EEE255700BB00C1 /* ZAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAAlertView.m; sourceTree = "<group>"; };
-		04D3DC521EEA821000074C18 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
-		04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
-		04D3DC541EEA821000074C18 /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
-		04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
-		04D3DC561EEA821000074C18 /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
-		04D3DC571EEA821000074C18 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
-		04D3DC581EEA821000074C18 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
-		04D3DC591EEA821000074C18 /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		049272891EEE255700BB00C1 /* ZAShowPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAShowPicker.h; sourceTree = "<group>"; };
+		0492728A1EEE255700BB00C1 /* ZAShowPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAShowPicker.m; sourceTree = "<group>"; };
 		04DAB89F1EE65A2B007BE50E /* ZATools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZATools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAB8BB1EE65B13007BE50E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04DAB8BC1EE65B13007BE50E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -359,6 +363,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041D3D941EFA1F4500A88C18 /* libxml2.tbd in Frameworks */,
+				041D3D921EFA1F1000A88C18 /* CoreLocation.framework in Frameworks */,
+				041D3D901EFA1F0600A88C18 /* CoreVideo.framework in Frameworks */,
+				041D3D8E1EFA1EF300A88C18 /* AudioToolbox.framework in Frameworks */,
+				041D3D8C1EFA1EE300A88C18 /* MobileCoreServices.framework in Frameworks */,
+				041D3D8A1EFA1ED800A88C18 /* MapKit.framework in Frameworks */,
+				041D3D881EFA1E4400A88C18 /* Foundation.framework in Frameworks */,
+				041D3D081EFA1CD400A88C18 /* AdSupport.framework in Frameworks */,
 				040B57351EEA516F000E1642 /* libReact.a in Frameworks */,
 				04DABA621EEA3282007BE50E /* JavaScriptCore.framework in Frameworks */,
 				04DAB9F21EE679C3007BE50E /* libz.tbd in Frameworks */,
@@ -462,21 +474,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		04D3DC511EEA820F00074C18 /* WebViewJavascriptBridge */ = {
-			isa = PBXGroup;
-			children = (
-				04D3DC521EEA821000074C18 /* WebViewJavascriptBridge.h */,
-				04D3DC531EEA821000074C18 /* WebViewJavascriptBridge.m */,
-				04D3DC541EEA821000074C18 /* WebViewJavascriptBridge_JS.h */,
-				04D3DC551EEA821000074C18 /* WebViewJavascriptBridge_JS.m */,
-				04D3DC561EEA821000074C18 /* WebViewJavascriptBridgeBase.h */,
-				04D3DC571EEA821000074C18 /* WebViewJavascriptBridgeBase.m */,
-				04D3DC581EEA821000074C18 /* WKWebViewJavascriptBridge.h */,
-				04D3DC591EEA821000074C18 /* WKWebViewJavascriptBridge.m */,
-			);
-			path = WebViewJavascriptBridge;
-			sourceTree = "<group>";
-		};
 		04DAB8961EE65A2A007BE50E = {
 			isa = PBXGroup;
 			children = (
@@ -544,8 +541,8 @@
 				04DAB8D51EE65C13007BE50E /* Controller */,
 				04DAB8E21EE65C13007BE50E /* Model */,
 				04DAB8F31EE65C13007BE50E /* Views */,
-				049272891EEE255700BB00C1 /* ZAAlertView.h */,
-				0492728A1EEE255700BB00C1 /* ZAAlertView.m */,
+				049272891EEE255700BB00C1 /* ZAShowPicker.h */,
+				0492728A1EEE255700BB00C1 /* ZAShowPicker.m */,
 				045238141EEE5E00002D7EB5 /* ZAEvent.h */,
 				045238151EEE5E00002D7EB5 /* ZAEvent.m */,
 			);
@@ -612,7 +609,6 @@
 		04DAB8C61EE65B13007BE50E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				04D3DC511EEA820F00074C18 /* WebViewJavascriptBridge */,
 				04DAB9FE1EE6885D007BE50E /* OpenSDK1.7.7 */,
 				04DAB9BA1EE660C3007BE50E /* UMessage_Sdk_1.4.0 */,
 				04DAB9BD1EE660C3007BE50E /* UMSocial */,
@@ -1086,6 +1082,14 @@
 		174E830944020795FA86A4FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				041D3D931EFA1F4500A88C18 /* libxml2.tbd */,
+				041D3D911EFA1F1000A88C18 /* CoreLocation.framework */,
+				041D3D8F1EFA1F0600A88C18 /* CoreVideo.framework */,
+				041D3D8D1EFA1EF300A88C18 /* AudioToolbox.framework */,
+				041D3D8B1EFA1EE300A88C18 /* MobileCoreServices.framework */,
+				041D3D891EFA1ED800A88C18 /* MapKit.framework */,
+				041D3D871EFA1E4400A88C18 /* Foundation.framework */,
+				041D3D071EFA1CD400A88C18 /* AdSupport.framework */,
 				040B57341EEA516F000E1642 /* libReact.a */,
 				04DABA611EEA3282007BE50E /* JavaScriptCore.framework */,
 				04DAB9F11EE679C3007BE50E /* libz.tbd */,
@@ -1141,7 +1145,7 @@
 				TargetAttributes = {
 					04DAB89E1EE65A2A007BE50E = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AW9MC26Y7G;
+						DevelopmentTeam = C8G87XC4N7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1264,7 +1268,7 @@
 				04DAB9A41EE65C8D007BE50E /* Reachability.m in Sources */,
 				04DAB99E1EE65C8D007BE50E /* JYImageDownloader.m in Sources */,
 				0452384E1EF21EBC002D7EB5 /* SetController.m in Sources */,
-				0492728B1EEE255700BB00C1 /* ZAAlertView.m in Sources */,
+				0492728B1EEE255700BB00C1 /* ZAShowPicker.m in Sources */,
 				04DAB92F1EE65C13007BE50E /* IvyButton.m in Sources */,
 				04DAB9A71EE65C8D007BE50E /* YZJBackFooter.m in Sources */,
 				04DAB9A31EE65C8D007BE50E /* GiFHUD.m in Sources */,
@@ -1282,7 +1286,6 @@
 				04DAB9201EE65C13007BE50E /* WebViewController.m in Sources */,
 				04DAB9AE1EE65C8D007BE50E /* IvyUserDefaults.m in Sources */,
 				04DAB9251EE65C13007BE50E /* CityModel.m in Sources */,
-				04D3DC5C1EEA821000074C18 /* WebViewJavascriptBridgeBase.m in Sources */,
 				04DAB9AB1EE65C8D007BE50E /* StorageUtils.m in Sources */,
 				04DAB99B1EE65C8D007BE50E /* JYCarouselAnimation.m in Sources */,
 				04DAB9A11EE65C8D007BE50E /* UIImageView+JYImageViewManager.m in Sources */,
@@ -1293,14 +1296,12 @@
 				04DAB99C1EE65C8D007BE50E /* JYConfiguration.m in Sources */,
 				04DAB9281EE65C13007BE50E /* ProvinceModel.m in Sources */,
 				04DAB92A1EE65C13007BE50E /* StreetModel.m in Sources */,
-				04D3DC5D1EEA821000074C18 /* WKWebViewJavascriptBridge.m in Sources */,
 				045238481EF21DFE002D7EB5 /* UserTableView.m in Sources */,
 				045238571EF21F4B002D7EB5 /* LogoutView.m in Sources */,
 				04DAB9321EE65C13007BE50E /* IntroPageView.m in Sources */,
 				04DAB9A01EE65C8D007BE50E /* JYWeakTimer.m in Sources */,
 				04DAB91E1EE65C13007BE50E /* BaseController.m in Sources */,
 				04DAB9291EE65C13007BE50E /* ResultModel.m in Sources */,
-				04D3DC5A1EEA821000074C18 /* WebViewJavascriptBridge.m in Sources */,
 				04DAB8CF1EE65B13007BE50E /* main.m in Sources */,
 				04DAB9941EE65C8D007BE50E /* UIButton+ClickArea.m in Sources */,
 				047D1FFF1EF3A72D00992EDB /* MinPickerView.m in Sources */,
@@ -1308,7 +1309,6 @@
 				04DAB9B31EE65F40007BE50E /* BannerModel.m in Sources */,
 				04DAB9E31EE677EE007BE50E /* HomeController.m in Sources */,
 				04DAB9AC1EE65C8D007BE50E /* NetworkServiceConfig.m in Sources */,
-				04D3DC5B1EEA821000074C18 /* WebViewJavascriptBridge_JS.m in Sources */,
 				04DAB99A1EE65C8D007BE50E /* JYCarousel.m in Sources */,
 				04DAB9211EE65C13007BE50E /* YzjNavigationController.m in Sources */,
 				04DAB9E81EE677F6007BE50E /* AccountService.m in Sources */,
@@ -1447,7 +1447,7 @@
 			baseConfigurationReference = D03682C4625CD3EED37F2A87 /* Pods-ZATools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AW9MC26Y7G;
+				DEVELOPMENT_TEAM = C8G87XC4N7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1465,7 +1465,7 @@
 					"$(PROJECT_DIR)/ZATools/Extension/OpenSDK1.7.7",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/React",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = yizhenjia.com.ZATools;
+				PRODUCT_BUNDLE_IDENTIFIER = ZATools2.yizhenjia.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1475,7 +1475,7 @@
 			baseConfigurationReference = 543DEAC146A776714A6A699F /* Pods-ZATools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AW9MC26Y7G;
+				DEVELOPMENT_TEAM = C8G87XC4N7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1493,7 +1493,7 @@
 					"$(PROJECT_DIR)/ZATools/Extension/OpenSDK1.7.7",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/React",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = yizhenjia.com.ZATools;
+				PRODUCT_BUNDLE_IDENTIFIER = ZATools2.yizhenjia.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

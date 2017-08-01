@@ -21,9 +21,6 @@
     [self addReactView];
 }
 
-- (NSString *)title{
-    return [self headerTitle];
-}
 - (void)addReactView{
     NSURL *jsCodeLocation;
 #ifdef DEBUG

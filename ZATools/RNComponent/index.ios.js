@@ -17,20 +17,28 @@ import {
 const eatIndex = require("./components/eat.index.js");
 const headerSearch = require("./components/common/header.search.js");
 const eatList = require("./components/eat.list.js");
+const eatDetail = require("./components/eat.detail.js");
+const chanjianList = require("./components/chanjian.list.js");
 
 export default class index extends Component{
 	render(){
-		const initialRoute = {
-			component: eatIndex,
-          	title: '能不能吃'
-		};
 		return(
 			<NavigatorIOS
 		        initialRoute={{
-		          component:  eatIndex,
-		          title: '能不能吃',
+		          component:  chanjianList,
+		          title: "产检时间表",
+		          passProps: {}
 		        }}
-		        style={{flex: 1}}
+		        configureScene={(route)=>{
+			 	return Navigator.configureScene.PushFromRight;
+				}}
+				renderScene={(route, navigator)=>{
+				 	var Component = route.component;
+				 	return(
+				 		<Component navigator={navigator} route={route} {...route.passProps} />
+				 	);
+				}}
+		        style={{flex:1}}
 		      />
 		)
 	}

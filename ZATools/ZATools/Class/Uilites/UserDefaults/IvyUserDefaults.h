@@ -44,7 +44,7 @@
 /**
  *  保存 获取宝宝档案
  *
- *  @param account
+ *  @param babyInfoModel
  */
 - (void)setBabyInfor:(BabyInfoModel *)babyInfoModel;
 - (BabyInfoModel *)getBabyInfor;
@@ -146,7 +146,7 @@
 /**
  上次检查更新时间
 
- @param time
+
  */
 - (void)setLastCheckVersionTime:(NSTimeInterval) time;
 - (NSTimeInterval)getLastCheckVersionTIme;
@@ -156,7 +156,6 @@
 /**
  宝宝成长记录提示弹窗
 
- @param show
  */
 - (void)setRecordNoticeDidShow:(BOOL)show;
 - (BOOL)getRecordNoticeDidShow;

@@ -74,4 +74,5 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WXAppId appSecret:WXAppSecret redirectURL:@"http://mobile.umeng.com/social"];
 }
 
+
 @end

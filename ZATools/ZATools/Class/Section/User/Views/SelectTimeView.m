@@ -68,7 +68,7 @@
 
     
     
-    if (_type == BirthDate || _type == ExpectDate) {
+    if (_type == BirthDate || _type == ExpectDate || _type == Normal) {
         _datePicker=[[UIDatePicker alloc]initWithFrame:CGRectMake(0, 50, kScreenWidth, 200)];
         _datePicker.datePickerMode=UIDatePickerModeDate;
         
@@ -77,10 +77,11 @@
         if (self.type==ExpectDate) {
             _datePicker.minimumDate = [NSDate date];
             _datePicker.maximumDate = nil;
-        }
-        
-        if (self.type==BirthDate) {
+        }else if (self.type==BirthDate) {
             _datePicker.maximumDate = [NSDate date];
+            _datePicker.minimumDate = nil;
+        }else{
+            _datePicker.maximumDate = nil;
             _datePicker.minimumDate = nil;
         }
         [ _datePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged ];
@@ -159,12 +160,13 @@
             [self.delegate performSelector:@selector(getBirthResult:) withObject:_timeString];
         }
         
-    }else if (self.type==ExpectDate)
+    }else if (self.type == ExpectDate || _type == Normal)
     {
         if (self.delegate) {
             [self.delegate performSelector:@selector(getExpectDateResult:) withObject:_timeString];
         }
-    }else{
+    }
+    else{
         if ([_delegate respondsToSelector:@selector(getDayResult:)]) {
             [_delegate getDayResult:selectedDayString];
         }

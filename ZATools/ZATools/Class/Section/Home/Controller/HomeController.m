@@ -8,12 +8,12 @@
 
 #import "HomeController.h"
 #import <React/RCTRootView.h>
-#import <WebKit/WKWebView.h>
-#import "WKWebViewJavascriptBridge.h"
 #import "ToolView.h"
 #import "EditToolController.h"
 #import "ToolController.h"
-@interface HomeController () <WKUIDelegate,WKNavigationDelegate>
+
+
+@interface HomeController () 
 {
     UIScrollView *scroll;
     NSArray *titleAry;
