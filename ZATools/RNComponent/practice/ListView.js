@@ -7,6 +7,7 @@ import {
   StyleSheet,
   ListView,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 
 export default class SHListView extends Component {
@@ -57,8 +58,10 @@ export default class SHListView extends Component {
 
       }}>
       <View style = {styles.row}>
-
-      <Text> {text}
+      <Image source = {require('./ice.jpg')}
+      style = {{width : 60, height : 60  ,marginRight: 15}}>
+      </Image>
+      <Text style = {{flex : 1, paddingRight:10}}> {text}
       </Text>
       </View>
       </TouchableOpacity>
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection : 'row',
-    justifyContent : 'center',
+    // justifyContent : 'center',
     padding : 10,
     backgroundColor : '#F6F6F6',
   }

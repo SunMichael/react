@@ -142,10 +142,10 @@ export class antenatalCareList extends Component{
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity onPress={this.pressFinish.bind(this, row.id)}>
-					<Image source={row.finish 
+					<Image source={row.finish
 								? require("./icon/success_red_icon.png")
 								: require("./icon/success_grey_icon.png")
-							}  
+							}
 							style={styles.right_icon}/>
 				</TouchableOpacity>
 			</View>
