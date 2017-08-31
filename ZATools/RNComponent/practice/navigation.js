@@ -8,13 +8,13 @@ import {
 } from 'react-native';
 
 const SHList = require("./scroller.js")
-
+var listView = require("./ListView.js")
 export default class SHNavigation  extends Component{
 
   _handleNavigationRequest() {
     this.refs.nav.push({
-      component: SHList,
-      title: '第二个界面',
+      component: listView,
+      title: '列表界面',
       passProps: { myProp: 'B' },
     });
   }

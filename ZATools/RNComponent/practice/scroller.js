@@ -9,6 +9,8 @@ import {
   Image,
   TouchableOpacity,
   Animated,
+  ActivityIndicator,
+  Button,
 }from "react-native";
 
 export class  FlatListBasics extends Component {
@@ -69,14 +71,27 @@ export class  FlatListBasics extends Component {
       <Text style = {styles.red}>{display}</Text>
       <Text style = {[styles.bigblue , styles.red]}>bigblue, red </Text>
       <View style = {{flex: 2, backgroundColor:'powderblue'}} />
+      <Button style = {{flex:2 , height: 50}}
+      onPress = {()=>{
+        console.log('clicked');
+      }}
+      title = 'click me'
+      color = '#841584'
+      accessibilityLabel = 'See an informative alert' />
       <View style = {{width: 50 , height: 50, backgroundColor:'#d9d9d9'}} />
+      <ActivityIndicator style = {styles.centering}
+      animating = {true}
+      size = 'large'
+      color="#aa00aa" />
       <TouchableOpacity onPress = {this.onPressButton}>
       <Animated.Image source = {require('./ice.jpg')}
       style = {{
         width: 50 ,
         height: 60,
+        borderRadius : 6,
+        borderColor : 'blue',
         transform: [{scale: this.state.animatedValue}]
-      }}>
+      }} >
       <Text style = {{backgroundColor: 'rgba(255, 255, 255, 0.1)'}}>imageText</Text>
       </Animated.Image>
       </TouchableOpacity>
@@ -102,6 +117,11 @@ const styles = StyleSheet.create({
   },
   red: {
     color: 'red',
+  },
+  centering:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10,
   }
 });
 
