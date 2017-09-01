@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Image,
   TabBarIOS,
+  TextInput,
 } from 'react-native';
 
 export default class SHListView extends Component {
@@ -26,6 +27,7 @@ export default class SHListView extends Component {
       pageSize : 20,
       dataSource : ds.cloneWithRows(this._genRows({})),
       selectedTab : 'blueTab',
+      inputValue: '',
     }
 
   }
@@ -102,6 +104,27 @@ export default class SHListView extends Component {
     if (num !== 2) {
       return (
         <View style = {[styles.tabContent , {backgroundColor : color}]}>
+
+        <TextInput style = {styles.input}
+        maxLength = {30}
+        multiline = {false}
+        onChangeText = {
+          (text)=> {
+            text = text.replace(/ /g, '_');
+            this.setState({
+                inputValue : text,
+            })
+          }
+        }
+        value = {this.state.inputValue}
+        keyboardType = 'email-address'
+        placeholder = '请输入内容'
+        onSubmitEditing = {
+          (event) => {
+            console.log('input submit : ' + event.nativeEvent.text);
+          }
+        }>
+        </TextInput>
         <Text style = {styles.tabText}> {pageText} </Text>
         <Text style = {styles.tabText}> {num} re-renders of the {pageText} </Text>
         </View>
@@ -158,12 +181,22 @@ const styles = StyleSheet.create({
   },
   tabContent: {
     flex : 1,
-    alignItems : 'center',
+    // alignItems : 'center',
   },
   tabText : {
     color : 'white',
     margin : 50,
-  }
+  },
+  input : {
+    marginTop : 100,
+    marginLeft: 15 ,
+    marginRight: 15,
+    borderRadius: 6,
+    height: 40,
+    borderWidth: 0.5,
+    borderColor: '#0f0f0f',
+    backgroundColor: 'white'
+  },
 });
 
 module.exports = SHListView;
