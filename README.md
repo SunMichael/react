@@ -53,4 +53,7 @@ pod 'React', :path => './node_modules/react-native', :subspecs => [
 
 5.创建js文件，在终端在启动服务，npm start或者npm start --reset-cache
 
+6.中文文档地址：http://reactnative.cn/
+
+
 
